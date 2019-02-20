@@ -17,9 +17,9 @@ local jsonschema = 'jsonschema';
 local V7 = 'http://json-schema.org/draft-07/schema#';
 
 local jid = {
-  namespace: 'https://titan-registry.io/schema/namespace',
-  createNamespace: 'https://titan-registry.io/schema/namespace/namespace-create',
-  listNamespaces: 'https://titan-registry.io/schema/namespace-list',
+  namespace: 'https://openpackages.io/schema/namespace',
+  createNamespace: 'https://openpackages.io/schema/namespace/namespace-create',
+  listNamespaces: 'https://openpackages.io/schema/namespace-list',
 };
 
 local uint64 = {

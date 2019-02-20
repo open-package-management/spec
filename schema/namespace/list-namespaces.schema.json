@@ -1,5 +1,5 @@
 {
-   "$id": "https://titan-registry.io/schema/namespace-list",
+   "$id": "https://openpackages.io/schema/namespace-list",
    "$schema": "http://json-schema.org/draft-07/schema#",
    "properties": {
       "namespaces": {
