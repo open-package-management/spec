@@ -1,0 +1,45 @@
+{
+   "$id": "https://titan-registry.io/schema/namespace",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "properties": {
+      "labels": {
+         "patternProperties": {
+            ".{1,}": {
+               "type": "string"
+            }
+         },
+         "type": "object"
+      },
+      "name": {
+         "type": "string"
+      },
+      "repoCount": {
+         "maximum": 18446744073709551616,
+         "minimum": 0,
+         "type": "integer"
+      },
+      "repoLimit": {
+         "maximum": 18446744073709551616,
+         "minimum": 0,
+         "type": "integer"
+      },
+      "status": {
+         "enum": [
+            "ACTIVE",
+            "TERMINATING"
+         ],
+         "type": "string"
+      },
+      "storageLimit": {
+         "maximum": 18446744073709551616,
+         "minimum": 0,
+         "type": "integer"
+      },
+      "storageUsed": {
+         "maximum": 18446744073709551616,
+         "minimum": 0,
+         "type": "integer"
+      }
+   },
+   "type": "object"
+}

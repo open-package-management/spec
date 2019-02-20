@@ -1,0 +1,49 @@
+{
+   "$id": "https://titan-registry.io/schema/namespace-list",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "properties": {
+      "namespaces": {
+         "items": {
+            "properties": {
+               "labels": {
+                  "type": "object"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "repoCount": {
+                  "maximum": 18446744073709551616,
+                  "minimum": 0,
+                  "type": "integer"
+               },
+               "repoLimit": {
+                  "maximum": 18446744073709551616,
+                  "minimum": 0,
+                  "type": "integer"
+               },
+               "status": {
+                  "enum": [
+                     "ACTIVE",
+                     "TERMINATING"
+                  ],
+                  "type": "string"
+               },
+               "storageLimit": {
+                  "maximum": 18446744073709551616,
+                  "minimum": 0,
+                  "type": "integer"
+               },
+               "storageUsed": {
+                  "maximum": 18446744073709551616,
+                  "minimum": 0,
+                  "type": "integer"
+               }
+            },
+            "type": "object"
+         },
+         "type": "array"
+      }
+   },
+   "title": "List Namespaces",
+   "type": "object"
+}

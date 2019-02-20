@@ -1,0 +1,9 @@
+{
+   "labels": {
+      "costCenter": "cs-foo",
+      "manager": "Tom Ripen",
+      "team": "team-foo"
+   },
+   "repoLimit": 100,
+   "storageLimit": 100000000000
+}
