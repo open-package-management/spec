@@ -19,9 +19,9 @@ local params = import '../parameters.libsonnet';
 local resp = import '../responses.libsonnet';
 
 local mediaType = {
-  namespace:: 'application/vnd.titan-distribution.namespace.v1+json',
-  createNamespace:: 'application/vnd.titan-distribution.namespace-create.v1+json',
-  listNamespaces:: 'application/vnd.titan-distribution.namespace-list.v1+json',
+  namespace:: 'application/vnd.open-package-management.namespace.v1+json',
+  createNamespace:: 'application/vnd.open-package-management.namespace-create.v1+json',
+  listNamespaces:: 'application/vnd.open-package-management.namespace-list.v1+json',
 };
 
 local getNamespace = {
