@@ -24,7 +24,7 @@
             "responses": {
                "200": {
                   "content": {
-                     "application/vnd.titan-distribution.namespace-list.v1+json": {
+                     "application/vnd.open-package-management.namespace-list.v1+json": {
                         "example": {
                            "namespaces": [
                               {
@@ -173,7 +173,7 @@
             "responses": {
                "200": {
                   "content": {
-                     "application/vnd.titan-distribution.namespace.v1+json": {
+                     "application/vnd.open-package-management.namespace.v1+json": {
                         "example": {
                            "labels": {
                               "costCenter": "cs-foo",
@@ -261,7 +261,7 @@
             ],
             "requestBody": {
                "content": {
-                  "application/vnd.titan-distribution.namespace-create.v1+json": {
+                  "application/vnd.open-package-management.namespace-create.v1+json": {
                      "example": {
                         "labels": {
                            "costCenter": "cs-foo",
