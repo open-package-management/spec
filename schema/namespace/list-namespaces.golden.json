@@ -1,0 +1,28 @@
+{
+   "namespaces": [
+      {
+         "labels": {
+            "costCenter": "cs-foo",
+            "manager": "Tom Ripen",
+            "team": "team-foo"
+         },
+         "name": "namespace-foo",
+         "repoCount": 23,
+         "repoLimit": 100,
+         "storageLimit": 548298572358,
+         "storageUsed": 580324752
+      },
+      {
+         "labels": {
+            "costCenter": "cs-bar",
+            "manager": "Frank Cousins",
+            "team": "team-bar"
+         },
+         "name": "namespace-bar",
+         "repoCount": 74,
+         "repoLimit": 200,
+         "storageLimit": 850834823484,
+         "storageUsed": 584920542
+      }
+   ]
+}

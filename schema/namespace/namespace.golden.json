@@ -1,0 +1,12 @@
+{
+   "labels": {
+      "costCenter": "cs-foo",
+      "manager": "Tom Ripen",
+      "team": "team-foo"
+   },
+   "name": "namespace-foo",
+   "repoCount": 23,
+   "repoLimit": 100,
+   "storageLimit": 548298572358,
+   "storageUsed": 580324752
+}
