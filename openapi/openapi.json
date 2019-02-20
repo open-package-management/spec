@@ -4,7 +4,7 @@
          "name": "Apache 2.0",
          "url": "http://www.apache.org/licenses/LICENSE-2.0"
       },
-      "title": "Titan API Endpoint Reference",
+      "title": "Open Package Management API Reference",
       "version": "v1.0.0-rc.1"
    },
    "openapi": "3.0.0",
