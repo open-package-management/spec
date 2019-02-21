@@ -12,14 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local openapi = 'openapi';
-local jsonschema = 'jsonschema';
-local V7 = 'http://json-schema.org/draft-07/schema#';
+local golden = import 'golden.libsonnet';
+local schema = import 'project.libsonnet';
 
-local jid = {
-    repo: 'https://openpackages.io/schema/repo',
-    createRepo: 'https://openpackages.io/schema/repo-create',
-    listRepos: 'https://openpackages.io/schema/repo-list',
-};
+{
+  'project.schema.json': schema.project(),
 
+  'project-create.schema.json': schema.createProject(),
 
+  'project-list.schema.json': schema.listProjects(),
+}

@@ -16,10 +16,25 @@ local openapi = 'openapi';
 local jsonschema = 'jsonschema';
 local V7 = 'http://json-schema.org/draft-07/schema#';
 
-local jid = {
-    repo: 'https://openpackages.io/schema/repo',
-    createRepo: 'https://openpackages.io/schema/repo-create',
-    listRepos: 'https://openpackages.io/schema/repo-list',
+local uint64 = {
+  type: 'integer',
+  minimum: 0,
+  maximum: 18446744073709551615,
 };
 
+local mapStringString(output=jsonschema) = {
+  type: 'object',
+  [if output == jsonschema
+  then 'patternProperties'
+  else if output == openapi
+  then 'x-patternProperties']: {
+    '.{1,}': {
+      type: 'string',
+    },
+  },
+};
 
+{
+  uint64:: uint64,
+  mapStringString:: mapStringString,
+}

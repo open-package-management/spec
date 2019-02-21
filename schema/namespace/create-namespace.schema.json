@@ -1,5 +1,5 @@
 {
-   "$id": "https://openpackages.io/schema/namespace/namespace-create",
+   "$id": "https://openpackages.io/schema/namespace-create",
    "$schema": "http://json-schema.org/draft-07/schema#",
    "properties": {
       "labels": {

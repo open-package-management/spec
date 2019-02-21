@@ -1,0 +1,15 @@
+{
+   "$id": "https://openpackages.io/schema/project-create",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "properties": {
+      "labels": {
+         "patternProperties": {
+            ".{1,}": {
+               "type": "string"
+            }
+         },
+         "type": "object"
+      }
+   },
+   "type": "object"
+}

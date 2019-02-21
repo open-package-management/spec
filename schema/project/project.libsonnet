@@ -19,60 +19,45 @@ local jsonschema = 'jsonschema';
 local V7 = 'http://json-schema.org/draft-07/schema#';
 
 local jid = {
-  namespace: 'https://openpackages.io/schema/namespace',
-  createNamespace: 'https://openpackages.io/schema/namespace-create',
-  listNamespaces: 'https://openpackages.io/schema/namespace-list',
+  project: 'https://openpackages.io/schema/project',
+  createProject: 'https://openpackages.io/schema/project-create',
+  listProjects: 'https://openpackages.io/schema/project-list',
 };
 
-
-local namespace(output=jsonschema) = {
-  [if output == jsonschema then '$id']: jid.namespace,
+local project(output=jsonschema) = {
+  [if output == jsonschema then '$id']: jid.project,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
   properties: {
     name: { type: 'string' },
-    storageLimit: types.uint64,
-    storageUsed: types.uint64,
-    repoLimit: types.uint64,
-    repoCount: types.uint64,
-    labels: types.mapStringString(output),
-    status: {
-      type: 'string',
-      enum: [
-        'ACTIVE',
-        'TERMINATING',
-      ],
-    },
-  },
-};
-
-local createNamespace(output=jsonschema) = {
-  [if output == jsonschema then '$id']: jid.createNamespace,
-  [if output == jsonschema then '$schema']: V7,
-  title: 'Create Namespace',
-  type: 'object',
-  properties: {
-    storageLimit: types.uint64,
-    repoLimit: types.uint64,
+    namespace: { type: 'string' },
     labels: types.mapStringString(output),
   },
 };
 
-local listNamespaces(output=jsonschema) = {
-  [if output == jsonschema then '$id']: jid.listNamespaces,
+local createProject(output=jsonschema) = {
+  [if output == jsonschema then '$id']: jid.createProject,
   [if output == jsonschema then '$schema']: V7,
-  title: 'List Namespaces',
   type: 'object',
   properties: {
-    namespaces: {
+    labels: types.mapStringString(output),
+  },
+};
+
+local listProjects(output=jsonschema) = {
+  [if output == jsonschema then '$id']: jid.listProjects,
+  [if output == jsonschema then '$schema']: V7,
+  type: 'object',
+  properties: {
+    projects: {
       type: 'array',
-      items: namespace(''),
+      items: project(''),
     },
   },
 };
 
 {
-  namespace:: namespace,
-  createNamespace:: createNamespace,
-  listNamespaces:: listNamespaces,
+  project:: project,
+  createProject:: createProject,
+  listProjects:: listProjects,
 }

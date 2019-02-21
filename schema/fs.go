@@ -226,14 +226,14 @@ var _escData = map[string]*_escFile{
 	"/namespace/create-namespace.schema.json": {
 		name:    "create-namespace.schema.json",
 		local:   "namespace/create-namespace.schema.json",
-		size:    621,
+		size:    611,
 		modtime: 1546544639,
 		compressed: `
-H4sIAAAAAAAC/7xSS07DMBDd5xSWYZnEiUgTyJYtQlxhmg6pS/zReJBAVe6O8mtL03V39pv3kz3HSAgh
-H/VO1kLumX2olXIerYfmC1oMqXYqNHs0oCwYDB4aPJ+ShhAYZTzZTMTFqlbqEJxNJjR11KodwScnWTVb
-PsxCT84jscYgazFWGtAOtthdIiMVmJHsxy3FTEmPedyv4GHCvx6HdoFJ21b+m/fnWx9Ha43bHrDhRXOi
-SELv3rTRfFXUwI8230bWIn8uirIqiqx6qrKXzSYv8/IywWg7M7Nbwdoytkjr5MCOoMW7hkenBpI1dyPn
-ddwB8b4sxfyp1w/XR38BAAD//69tkQVtAgAA
+H4sIAAAAAAAC/7xSzU6DQBC+8xSb1WNhIVJQrl6N8RWmdKRb2Z/Mjomm4d0NsNRaeva43898X3bmlAgh
+5L3ey0bIA7MPjVLOo/XQfkCHIdNOhfaABpQFg8FDi2lLCIxyM5tnehnQKHUMzqYzmjnq1J7gndO8joPu
+otGT80isMchGTEVGtIcd9pfIJAVmJPt2yxEl2anYDCt4ZPjb49guMGnbyT/88PsaNsna43ZHbHnxnCWS
+0LsXbTRfFTXwpc2nkY0oHsuyqssyrx/q/Gm7Laqiukww2kZlfitYW8YOaZ0c2BF0+K/hybmBZM39pHme
+bkC8LkcRl3r9cUPyEwAA///4CI/0YwIAAA==
 `,
 	},
 
@@ -267,6 +267,45 @@ V1tI8cScLbRYQqtjf8wFsWD0VO8VtjjJv4TcS5qQ8DaKxnEUBfFNHNyNRuE4HNdLSaEqZ9DXVSiEDGx/
 `,
 	},
 
+	"/project/project-create.schema.json": {
+		name:    "project-create.schema.json",
+		local:   "project/project-create.schema.json",
+		size:    330,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/2yPQc6DIBCF956C8P9LlXbVhFP0CohTxVqYDLNpDHdvEE3b2CXvfR95s1RCCPnveqmF
+HJkxaqUCgkdj72aA2Lqgoh3hYRRSmMByYwkMg6yLWspd10pNMfimpG2gQfVkbtycLts3f5uIFBCIHUSp
+xTojp7PpYP5MVtQwA/nrL2ND2uVcp0OcG34i5HWRyflBfvXp/Up1dXRClw/enZUu3IFI1SsAAP//Razw
+MUoBAAA=
+`,
+	},
+
+	"/project/project-list.schema.json": {
+		name:    "project-list.schema.json",
+		local:   "project/project-list.schema.json",
+		size:    560,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/5yPz07DMAzG732KKHBcF25IeRsvM11Gm1i2LxPau6M0LVQtBbTr9+f32R+NMcY+x7P1
+xl5USbxzmTARhHfoUI4xOwkXHMAR5ysGbfsoag+1WK257J27Sk5tVY+ZO3dmeNP25XWCPE1F4kzIGlGs
+N+MRk1oWllqRo+Kw0nYZ33YPJ+x/tIqrN8Jydj6VRbuO3A8bXoIB/6KJckzdf2lCEB5GNr8M7H+3DH6l
+gBluc2gE19gGc28+AwAA//8Lb3QTMAIAAA==
+`,
+	},
+
+	"/project/project.schema.json": {
+		name:    "project.schema.json",
+		local:   "project/project.schema.json",
+		size:    430,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/4yPO27FIBBFe1aBSErbJFUkVpEtjPHExrFhBNNEFnuP/Hkff4pXcuYe3cskpJTq3TXK
+SNUxUzJaB0JPYH+hxVS5oJPtcARNMfRoWRWrs9KbZ7TuU/DlSqsQW91E+OHy42vz3zaRYiCM7DApI5f+
+mQ5Q4/BMligwY/TfV8YWqabPIp/wfOE/wnld4uh8q3b3/HjlQpydUC8/FYeI8jDiYeN1zV5JBPZFT9zl
+05gs/gMAAP//nWVdOq4BAAA=
+`,
+	},
+
 	"/": {
 		name:  "/",
 		local: `.`,
@@ -276,6 +315,12 @@ V1tI8cScLbRYQqtjf8wFsWD0VO8VtjjJv4TcS5qQ8DaKxnEUBfFNHNyNRuE4HNdLSaEqZ9DXVSiEDGx/
 	"/namespace": {
 		name:  "namespace",
 		local: `namespace`,
+		isDir: true,
+	},
+
+	"/project": {
+		name:  "project",
+		local: `project`,
 		isDir: true,
 	},
 
@@ -294,6 +339,12 @@ var _escDirs = map[string][]os.FileInfo{
 		_escData["/namespace/create-namespace.schema.json"],
 		_escData["/namespace/list-namespaces.schema.json"],
 		_escData["/namespace/namespace.schema.json"],
+	},
+
+	"project": {
+		_escData["/project/project-create.schema.json"],
+		_escData["/project/project-list.schema.json"],
+		_escData["/project/project.schema.json"],
 	},
 
 	"repository": {},
