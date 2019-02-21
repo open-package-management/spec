@@ -7,6 +7,7 @@
    "name": "namespace-foo",
    "repoCount": 23,
    "repoLimit": 100,
+   "status": "ACTIVE",
    "storageLimit": 548298572358,
    "storageUsed": 580324752
 }
