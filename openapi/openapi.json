@@ -321,6 +321,130 @@
             ]
          }
       },
+      "/namespaces/{namespace}/project/{project}/repos": {
+         "get": {
+            "operationId": "listRepos",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "project",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "repo",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK"
+               }
+            },
+            "tags": [
+               "repos"
+            ]
+         }
+      },
+      "/namespaces/{namespace}/project/{project}/repos/{repo}": {
+         "get": {
+            "operationId": "getRepo",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "project",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "repo",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK"
+               }
+            },
+            "tags": [
+               "repos"
+            ]
+         },
+         "put": {
+            "operationId": "putRepo",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "project",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "repo",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "400": {
+                  "description": "Bad Request"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Forbidden"
+               }
+            },
+            "tags": [
+               "repos"
+            ]
+         }
+      },
       "/namespaces/{namespace}/projects": {
          "get": {
             "operationId": "listProjects",

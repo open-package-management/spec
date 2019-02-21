@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+local example = import '../../schema/namespace/golden.libsonnet';
 local schema = import '../../schema/repository/repository.libsonnet';
 local params = import '../parameters.libsonnet';
 local resp = import '../responses.libsonnet';
@@ -21,31 +22,57 @@ local mediaType = {
   repo:: 'application/vnd.titan-distribution.repository.v1+json',
 };
 
+local getRepo = {
+  tags: ['repos'],
+  operationId: 'getRepo',
+  parameters: [
+    params.namespace,
+    params.project,
+    params.repo,
+  ],
+  responses: {
+    '200': {
+      description: 'OK',
+    },
+  },
+};
+
 local putRepo = {
   tags: ['repos'],
   operationId: 'putRepo',
   parameters: [
     params.namespace,
+    params.project,
+    params.repo,
   ],
   responses: resp.baseResponses,
-  requestBody: {
-    required: true,
-    content: {
-      [mediaType.repo]: {
-        schema: schema.repo('openapi'),
-        example: example.repo,
-      },
+};
+
+local listRepos = {
+  tags: ['repos'],
+  operationId: 'listRepos',
+  parameters: [
+    params.namespace,
+    params.project,
+    params.repo,
+  ],
+  responses: {
+    '200': {
+      description: 'OK',
     },
   },
 };
 
 local repo = {
+  get: getRepo,
   put: putRepo,
 };
 
-local repos = {};
+local repos = {
+  get: listRepos,
+};
 
 {
-  //  '/namespaces/{namespace}/repos': repos,
-  //  '/namespaces/{namespace}/repos/{repo}': repo,
+  '/namespaces/{namespace}/project/{project}/repos': repos,
+  '/namespaces/{namespace}/project/{project}/repos/{repo}': repo,
 }
