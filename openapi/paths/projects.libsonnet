@@ -12,10 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+local schema = import '../../schema/project/project.libsonnet';
 local params = import '../parameters.libsonnet';
 
 local mediaType = {
   project:: 'application/vnd.open-package-management.project.v1+json',
+  createProject:: 'application/vnd.open-package-management.project-create.v1+json',
+  listProjects:: 'application/vnd.open-package-management.project-list.v1+json',
 };
 
 local getProject = {
@@ -28,6 +31,12 @@ local getProject = {
   responses: {
     '200': {
       description: 'OK',
+      content: {
+        [mediaType.project]: {
+          schema: schema.project('openapi'),
+          //          example: example.namespace,
+        },
+      },
     },
   },
 };
@@ -42,6 +51,12 @@ local putProject = {
   responses: {
     '200': {
       description: 'OK',
+      content: {
+        [mediaType.createProject]: {
+          schema: schema.createProject('openapi'),
+          //          example: example.namespace,
+        },
+      },
     },
   },
 };
@@ -69,6 +84,12 @@ local listProjects = {
   responses: {
     '200': {
       description: 'OK',
+      content: {
+        [mediaType.listProjects]: {
+          schema: schema.listProjects('openapi'),
+          //          example: example.namespace,
+        },
+      },
     },
   },
 };

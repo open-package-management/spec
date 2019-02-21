@@ -506,6 +506,32 @@
             ],
             "responses": {
                "200": {
+                  "content": {
+                     "application/vnd.open-package-management.project-list.v1+json": {
+                        "schema": {
+                           "properties": {
+                              "projects": {
+                                 "items": {
+                                    "properties": {
+                                       "labels": {
+                                          "type": "object"
+                                       },
+                                       "name": {
+                                          "type": "string"
+                                       },
+                                       "namespace": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
                   "description": "OK"
                }
             },
@@ -566,6 +592,29 @@
             ],
             "responses": {
                "200": {
+                  "content": {
+                     "application/vnd.open-package-management.project.v1+json": {
+                        "schema": {
+                           "properties": {
+                              "labels": {
+                                 "type": "object",
+                                 "x-patternProperties": {
+                                    ".{1,}": {
+                                       "type": "string"
+                                    }
+                                 }
+                              },
+                              "name": {
+                                 "type": "string"
+                              },
+                              "namespace": {
+                                 "type": "string"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
                   "description": "OK"
                }
             },
@@ -595,6 +644,23 @@
             ],
             "responses": {
                "200": {
+                  "content": {
+                     "application/vnd.open-package-management.project-create.v1+json": {
+                        "schema": {
+                           "properties": {
+                              "labels": {
+                                 "type": "object",
+                                 "x-patternProperties": {
+                                    ".{1,}": {
+                                       "type": "string"
+                                    }
+                                 }
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
                   "description": "OK"
                }
             },
