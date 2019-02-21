@@ -13,9 +13,10 @@
 // limitations under the License.
 
 local namespaces = import 'namespaces.libsonnet';
+local packages = import 'packages.libsonnet';
 local projects = import 'projects.libsonnet';
 local repos = import 'repos.libsonnet';
 
-local paths = namespaces + projects + repos;
+local paths = namespaces + projects + repos + packages;
 
 paths

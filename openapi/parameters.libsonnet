@@ -56,6 +56,7 @@ local perPage = {
   namespace:: namespace,
   project:: project,
   repo:: repo,
+  package:: package,
   label:: label,
   perPage:: perPage,
 }

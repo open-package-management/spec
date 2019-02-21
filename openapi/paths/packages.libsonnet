@@ -12,23 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local example = import '../../schema/namespace/golden.libsonnet';
-local schema = import '../../schema/repository/repository.libsonnet';
 local params = import '../parameters.libsonnet';
-local resp = import '../responses.libsonnet';
 
-
-local mediaType = {
-  repo:: 'application/vnd.titan-distribution.repository.v1+json',
-};
-
-local getRepo = {
-  tags: ['repos'],
-  operationId: 'getRepo',
+local getPackage = {
+  tags: ['packages'],
+  operationId: 'getPackage',
   parameters: [
     params.namespace,
     params.project,
     params.repo,
+    params.package,
   ],
   responses: {
     '200': {
@@ -37,35 +30,14 @@ local getRepo = {
   },
 };
 
-local putRepo = {
-  tags: ['repos'],
-  operationId: 'putRepo',
+local putPackage = {
+  tags: ['packages'],
+  operationId: 'putPackage',
   parameters: [
     params.namespace,
     params.project,
     params.repo,
-  ],
-  responses: resp.baseResponses,
-};
-
-local deleteRepo = {
-  tags: ['repos'],
-  operationId: 'deleteRepo',
-  parameters: [
-    params.namespace,
-    params.project,
-    params.repo,
-  ],
-  responses: resp.baseResponses,
-};
-
-local listRepos = {
-  tags: ['repos'],
-  operationId: 'listRepos',
-  parameters: [
-    params.namespace,
-    params.project,
-    params.repo,
+    params.package,
   ],
   responses: {
     '200': {
@@ -74,17 +46,49 @@ local listRepos = {
   },
 };
 
-local repo = {
-  get: getRepo,
-  put: putRepo,
-  delete: deleteRepo,
+local deletePackage = {
+  tags: ['packages'],
+  operationId: 'deletePackage',
+  parameters: [
+    params.namespace,
+    params.project,
+    params.repo,
+    params.package,
+  ],
+  responses: {
+    '200': {
+      description: 'OK',
+    },
+  },
 };
 
-local repos = {
-  get: listRepos,
+local listPackages = {
+  tags: ['packages'],
+  operationId: 'listPackage',
+  parameters: [
+    params.namespace,
+    params.project,
+    params.repo,
+    params.package,
+  ],
+  responses: {
+    '200': {
+      description: 'OK',
+    },
+  },
+};
+
+local package = {
+  get: getPackage,
+  put: putPackage,
+  delete: deletePackage,
+};
+
+local packages = {
+  get: listPackages,
 };
 
 {
-  '/namespaces/{namespace}/project/{project}/repos': repos,
-  '/namespaces/{namespace}/project/{project}/repos/{repo}': repo,
+  '/namespaces/{namespace}/projects/{project}/repos/{repo}/packages': packages,
+  '/namespaces/{namespace}/projects/{project}/repos/{repo}/packages/{package}': package,
 }
