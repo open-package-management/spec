@@ -19,6 +19,13 @@ local namespace = {
   schema: { type: 'string' },
 };
 
+local project = {
+  name: 'project',
+  'in': 'path',
+  required: true,
+  schema: { type: 'string' },
+};
+
 local label = {
   name: 'label',
   'in': 'query',
@@ -33,6 +40,7 @@ local perPage = {
 
 {
   namespace:: namespace,
+  project:: project,
   label:: label,
   perPage:: perPage,
 }

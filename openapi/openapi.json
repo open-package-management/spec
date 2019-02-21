@@ -320,6 +320,118 @@
                "namespaces"
             ]
          }
+      },
+      "/namespaces/{namespace}/projects": {
+         "get": {
+            "operationId": "listProjects",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK"
+               }
+            },
+            "tags": [
+               "projects"
+            ]
+         }
+      },
+      "/namespaces/{namespace}/projects/{project}": {
+         "delete": {
+            "operationId": "deleteProject",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "project",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK"
+               }
+            },
+            "tags": [
+               "projects"
+            ]
+         },
+         "get": {
+            "operationId": "getProject",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "project",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK"
+               }
+            },
+            "tags": [
+               "projects"
+            ]
+         },
+         "put": {
+            "operationId": "putProject",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "project",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK"
+               }
+            },
+            "tags": [
+               "projects"
+            ]
+         }
       }
    }
 }
