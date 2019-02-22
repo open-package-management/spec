@@ -306,6 +306,45 @@ mQ5Q4/BMligwY/TfV8YWqabPIp/wfOE/wnld4uh8q3b3/HjlQpydUC8/FYeI8jDiYeN1zV5JBPZFT9zl
 `,
 	},
 
+	"/repository/repository-create.schema.json": {
+		name:    "repository-create.schema.json",
+		local:   "repository/repository-create.schema.json",
+		size:    378,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/4SOTY6DMAyF9zlFlJklkJnVSDnFXCEEF0JpYjneVCh3ryDQH1GpS7/vfbZnIaVU375T
+RqqBGZPROiIEtO5se0iNjzq5AS5WE2CsHYFlUFXxCtldo/WYYqhL2kTqdUf2xPXP37bjaxORIgKxh6SM
+XH9Y0sm2MD0na9UyA4X/d8ZWaebfKh/ihfAVYfkuMfnQqxeeH1OuxNGJ7QiOd+de2fksPp1ZDxTvsDSL
+WwAAAP//ALvfrXoBAAA=
+`,
+	},
+
+	"/repository/repository-list.schema.json": {
+		name:    "repository-list.schema.json",
+		local:   "repository/repository-list.schema.json",
+		size:    642,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/6yQ3U7DMAyF7/sUUeByXbhDytt4meky2tiyfTOhvTtKs/GzUkCI23O+88nJS+ec8/d5
+76PzBzPWGAIxFob0DAPqNlPQdMAJgiBTP2Y1v2mrll+XMYSjUulbuiUZwl7gyfqHx4vh7jJkIUaxjOqj
+my+oadVrNpLPea2y4XSTrXre6xF2OH5Z1dZOjPV02h0xmb9FzpuFr8CEP9nUJJfhtzZlSP+oZKH5LX8U
+dt/o17/rI/hGgQicrtAsbthCc+5eAwAA//+mt4mxggIAAA==
+`,
+	},
+
+	"/repository/repository.schema.json": {
+		name:    "repository.schema.json",
+		local:   "repository/repository.schema.json",
+		size:    481,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/5TPTU4DMQwF4H1OEQWW0wmskHIKruCmZprSxpbjDapydzS/MMws6DLP/uSXu7HWuud0
+csG6syqX4D0xZob4CR2WNpEv8Yw38IJMrhnBGM0oeH8plA9j2pJ0/iTwoYeXtwk/TZCFGEUTFhfscLxP
+r3DE6+9kWAVVlPy+J6aV9v7a1E3cT/SLsW9XVFLu3Gpef161MVtDxwtGnc2y4jLc8E/H/TNrUhjio46F
+hg7/Umahmy9U8x0AAP//CWG/wuEBAAA=
+`,
+	},
+
 	"/": {
 		name:  "/",
 		local: `.`,
@@ -347,5 +386,9 @@ var _escDirs = map[string][]os.FileInfo{
 		_escData["/project/project.schema.json"],
 	},
 
-	"repository": {},
+	"repository": {
+		_escData["/repository/repository-create.schema.json"],
+		_escData["/repository/repository-list.schema.json"],
+		_escData["/repository/repository.schema.json"],
+	},
 }

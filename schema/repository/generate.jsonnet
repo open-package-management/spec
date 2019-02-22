@@ -13,9 +13,12 @@
 // limitations under the License.
 
 local golden = import 'golden.libsonnet';
-local rp = import 'repository.libsonnet';
+local schema = import 'repository.libsonnet';
 
 {
-  //  'repo.schema.json': rp.repo(),
-  // 'repo.golden.json': golden.repo,
+  'repository.schema.json': schema.repo(),
+
+  'repository-create.schema.json': schema.createRepo(),
+
+  'repository-list.schema.json': schema.listRepos(),
 }
