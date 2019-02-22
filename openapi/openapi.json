@@ -370,6 +370,9 @@
                                        },
                                        "project": {
                                           "type": "string"
+                                       },
+                                       "type": {
+                                          "type": "string"
                                        }
                                     },
                                     "type": "object"
@@ -485,6 +488,9 @@
                                  "type": "string"
                               },
                               "project": {
+                                 "type": "string"
+                              },
+                              "type": {
                                  "type": "string"
                               }
                            },
