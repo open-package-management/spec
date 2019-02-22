@@ -24,6 +24,60 @@ local jid = {
   listRepos: 'https://openpackages.io/schema/repo-list',
 };
 
+local descriptor(output=jsonschema) = {
+
+  local mediaType = {
+    type: 'string',
+    pattern: '^[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}/[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}$',
+  },
+
+  local digestSHA256 = {
+    properties: {
+      digest: {
+        pattern: '^sha256:[A-Fa-f0-9]{64}$',
+      },
+    },
+  },
+
+  local digestSHA512 = {
+    properties: {
+      digest: {
+        pattern: '^sha512:[A-Fa-f0-9]{128}$',
+      },
+    },
+  },
+
+  local digest = {
+    type: 'string',
+    pattern: '^[a-z0-9]+(?:[+._-][a-z0-9]+)*:[a-zA-Z0-9=_-]+$',
+  },
+
+  local urls = {
+    type: 'array',
+    items: {
+      type: 'string',
+      format: 'uri',
+    },
+  },
+
+  type: 'object',
+  properties: {
+    mediaType: mediaType,
+    size: types.uint64,
+    digest: digest,
+    urls: urls,
+  },
+  required: [
+    'size',
+    'mediaType',
+    'digest',
+  ],
+  anyOf: [
+    digestSHA256,
+    digestSHA512,
+  ],
+};
+
 local repo(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.repo,
   [if output == jsonschema then '$schema']: V7,
@@ -33,6 +87,15 @@ local repo(output=jsonschema) = {
     namespace: { type: 'string' },
     project: { type: 'string' },
     type: { type: 'string' },
+    tags: {
+      type: 'object',
+      [if output == jsonschema
+      then 'patternProperties'
+      else if output == openapi
+      then 'x-patternProperties']: {
+        '.{1,}': descriptor(output),
+      },
+    },
     labels: types.mapStringString(output),
   },
 };

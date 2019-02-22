@@ -17,6 +17,9 @@
                "project": {
                   "type": "string"
                },
+               "tags": {
+                  "type": "object"
+               },
                "type": {
                   "type": "string"
                }

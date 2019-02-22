@@ -19,6 +19,57 @@
       "project": {
          "type": "string"
       },
+      "tags": {
+         "patternProperties": {
+            ".{1,}": {
+               "anyOf": [
+                  {
+                     "properties": {
+                        "digest": {
+                           "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+                        }
+                     }
+                  },
+                  {
+                     "properties": {
+                        "digest": {
+                           "pattern": "^sha512:[A-Fa-f0-9]{128}$"
+                        }
+                     }
+                  }
+               ],
+               "properties": {
+                  "digest": {
+                     "pattern": "^[a-z0-9]+(?:[+._-][a-z0-9]+)*:[a-zA-Z0-9=_-]+$",
+                     "type": "string"
+                  },
+                  "mediaType": {
+                     "pattern": "^[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}/[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}$",
+                     "type": "string"
+                  },
+                  "size": {
+                     "maximum": 18446744073709551616,
+                     "minimum": 0,
+                     "type": "integer"
+                  },
+                  "urls": {
+                     "items": {
+                        "format": "uri",
+                        "type": "string"
+                     },
+                     "type": "array"
+                  }
+               },
+               "required": [
+                  "size",
+                  "mediaType",
+                  "digest"
+               ],
+               "type": "object"
+            }
+         },
+         "type": "object"
+      },
       "type": {
          "type": "string"
       }

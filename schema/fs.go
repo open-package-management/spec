@@ -322,26 +322,31 @@ WwAAAP//ALvfrXoBAAA=
 	"/repository/repository-list.schema.json": {
 		name:    "repository-list.schema.json",
 		local:   "repository/repository-list.schema.json",
-		size:    720,
+		size:    798,
 		modtime: 1546544639,
 		compressed: `
-H4sIAAAAAAAC/6yQTW4CMQyF93OKKO2SId1Vym1McIfQmdiyvUEVd68yGfoDpa0Q2/e+98nJW+ec8495
-66PzOzPWGAIxFob0CgPqOlPQtMMJgiBTP2Y1v2qrlp+WMYS9UulbuiYZwlbgxfqn58XwsAxZiFEso/ro
-5gtqWvWajeR7XqtsOJ1lVz2f9QgbHH+samsHxno6bfaYzJ8jx9WFr8CEf9nUJJfhvzZlSHdUstD8lrsJ
-l8VNtu4X9/XP/wp+UCAChxM0ixt2oTl27wEAAP//8V0VBNACAAA=
+H4sIAAAAAAAC/6yQzU7DMAzH732KKHBcF25IfRuvM1lGG1u2LxPau6M0HR8bBTT1+v/46W+/Nc45/5j2
+vnP+YMbahUCMmaF/hYi6TRS0P+AIQZCpHZKa39RW1S/NLoSjUm6ruiWJYS/wYu3T80x4mIssxCiWUH3n
+pgVFLXhNRvJdL1YyHK+0Rc6nPcAOhx+t4tqJsUyn3RF789eR8+aGl2HEv2hqknL8L00Z+hWRLDTdshrQ
+IK74v7lx17bmF/bylK/BjxSIwOkSmsA1doM5N+8BAAD//8EyicoeAwAA
 `,
 	},
 
 	"/repository/repository.schema.json": {
 		name:    "repository.schema.json",
 		local:   "repository/repository.schema.json",
-		size:    532,
+		size:    2155,
 		modtime: 1546544639,
 		compressed: `
-H4sIAAAAAAAC/5TPwU7DMAwG4HueIgocuwZOSHkKXsHLTJexxZbjC5ry7qhtNhjtgR7z25/852qste45
-HVyw7qjKJXhPjJkhfsKApU/kSzziBbwgk+tmMEc3FLw/Fcq7Oe1JBn8Q+NDdy1vDTw2yEKNowuKCnY6P
-6Rn2eP6dTKugipLf10Rb6a+vXV3E40S/GMd2RSXlwT3M68+rdmZpaH/CqDdzX3EZLvin4/qZR1IY4lbH
-QlOHbarN/0HM3S1+Xc13AAAA//9MzlcFFAIAAA==
+H4sIAAAAAAAC/8RVTY/aMBS851ekXlS1Jc4HDWGJVFVcem0PPS3KorfkEbwliWsbqSzKf69CskAI+VgV
+qTdn/OZ5xvbEe03XdTJgIfF1slaKS9+yUo4Jh+UviFCaLLXkco0xWAJ5SoyCUECvJN+ynmWa0AI1UxFZ
+oYCVovakJN+VRC5SjkIxlMTXD4vn6AaecHOOHEpBKRTJj2uMssTcO0ZWg/MZteOYq5NKsCQilfns9JUZ
+Wp2TPj3jUr1yjiUkgRgvNF5fpkqRHJZv5XGRHjS8jaUguukmQrL7viK+Pr+c0fV69Ul500qVupBFKFVr
+zZn+3PWjXMNo7PnzGf0GdGXTabD33GxAGhtkWm/4/CL8Z49jZ1Tx6Izub2XyEgtqrru9dbqq+JkDfcld
+DD989edDc0GDI/Lxk5+PZ/TBptMvCxoMB8RoaNkW55YDJDGGDH4W5F5yZ/Sh1HcavrsbvKePC3MY7G3D
+GXmZ1a/s9nYke2lzEsMfFm9j4uvOvet6E9e1J58n9nQ8djzHaxITs6Rk2V16WaIwQtFf8FZsWjJCmMK4
+I0OrVMSQ3zayFaxpQ/vtaZPKczYIATvSJzv1VkTg7y0TGDb8Movj67inRkvkesT3+hv2b++equWn6SXS
+jrxa00z7GwAA//+1jk5YawgAAA==
 `,
 	},
 

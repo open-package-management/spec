@@ -34,6 +34,18 @@ local mapStringString(output=jsonschema) = {
   },
 };
 
+local mapStringObject(output=jsonschema) = {
+  type: 'object',
+  [if output == jsonschema
+  then 'patternProperties'
+  else if output == openapi
+  then 'x-patternProperties']: {
+    '.{1,}': {
+      type: 'string',
+    },
+  },
+};
+
 {
   uint64:: uint64,
   mapStringString:: mapStringString,
