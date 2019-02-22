@@ -352,6 +352,35 @@
             ],
             "responses": {
                "200": {
+                  "content": {
+                     "application/vnd.open-package-management.repository-list.v1+json": {
+                        "schema": {
+                           "properties": {
+                              "repositories": {
+                                 "items": {
+                                    "properties": {
+                                       "labels": {
+                                          "type": "object"
+                                       },
+                                       "name": {
+                                          "type": "string"
+                                       },
+                                       "namespace": {
+                                          "type": "string"
+                                       },
+                                       "project": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
                   "description": "OK"
                }
             },
@@ -437,6 +466,32 @@
             ],
             "responses": {
                "200": {
+                  "content": {
+                     "application/vnd.open-package-management.repository.v1+json": {
+                        "schema": {
+                           "properties": {
+                              "labels": {
+                                 "type": "object",
+                                 "x-patternProperties": {
+                                    ".{1,}": {
+                                       "type": "string"
+                                    }
+                                 }
+                              },
+                              "name": {
+                                 "type": "string"
+                              },
+                              "namespace": {
+                                 "type": "string"
+                              },
+                              "project": {
+                                 "type": "string"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
                   "description": "OK"
                }
             },
@@ -474,16 +529,27 @@
             ],
             "responses": {
                "200": {
+                  "content": {
+                     "application/vnd.open-package-management.repository-create.v1+json": {
+                        "schema": {
+                           "properties": {
+                              "labels": {
+                                 "type": "object",
+                                 "x-patternProperties": {
+                                    ".{1,}": {
+                                       "type": "string"
+                                    }
+                                 }
+                              },
+                              "type": {
+                                 "type": "string"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
                   "description": "OK"
-               },
-               "400": {
-                  "description": "Bad Request"
-               },
-               "401": {
-                  "description": "Unauthorized"
-               },
-               "403": {
-                  "description": "Forbidden"
                }
             },
             "tags": [

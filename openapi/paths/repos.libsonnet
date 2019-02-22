@@ -19,7 +19,9 @@ local resp = import '../responses.libsonnet';
 
 
 local mediaType = {
-  repo:: 'application/vnd.titan-distribution.repository.v1+json',
+  repo:: 'application/vnd.open-package-management.repository.v1+json',
+  createRepo:: 'application/vnd.open-package-management.repository-create.v1+json',
+  listRepos:: 'application/vnd.open-package-management.repository-list.v1+json',
 };
 
 local getRepo = {
@@ -33,6 +35,12 @@ local getRepo = {
   responses: {
     '200': {
       description: 'OK',
+      content: {
+        [mediaType.repo]: {
+          schema: schema.repo('openapi'),
+          // example: example.namespace,
+        },
+      },
     },
   },
 };
@@ -45,7 +53,17 @@ local putRepo = {
     params.project,
     params.repo,
   ],
-  responses: resp.baseResponses,
+  responses: {
+    '200': {
+      description: 'OK',
+      content: {
+        [mediaType.createRepo]: {
+          schema: schema.createRepo('openapi'),
+          // example: example.namespace,
+        },
+      },
+    },
+  },
 };
 
 local deleteRepo = {
@@ -70,6 +88,12 @@ local listRepos = {
   responses: {
     '200': {
       description: 'OK',
+      content: {
+        [mediaType.listRepos]: {
+          schema: schema.listRepos('openapi'),
+          //          example: example.namespace,
+        },
+      },
     },
   },
 };
