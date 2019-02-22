@@ -32,6 +32,7 @@ local repo(output=jsonschema) = {
     name: { type: 'string' },
     namespace: { type: 'string' },
     project: { type: 'string' },
+    type: { type: 'string' },
     labels: types.mapStringString(output),
   },
 };

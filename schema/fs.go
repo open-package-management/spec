@@ -322,26 +322,26 @@ WwAAAP//ALvfrXoBAAA=
 	"/repository/repository-list.schema.json": {
 		name:    "repository-list.schema.json",
 		local:   "repository/repository-list.schema.json",
-		size:    642,
+		size:    720,
 		modtime: 1546544639,
 		compressed: `
-H4sIAAAAAAAC/6yQ3U7DMAyF7/sUUeByXbhDytt4meky2tiyfTOhvTtKs/GzUkCI23O+88nJS+ec8/d5
-76PzBzPWGAIxFob0DAPqNlPQdMAJgiBTP2Y1v2mrll+XMYSjUulbuiUZwl7gyfqHx4vh7jJkIUaxjOqj
-my+oadVrNpLPea2y4XSTrXre6xF2OH5Z1dZOjPV02h0xmb9FzpuFr8CEP9nUJJfhtzZlSP+oZKH5LX8U
-dt/o17/rI/hGgQicrtAsbthCc+5eAwAA//+mt4mxggIAAA==
+H4sIAAAAAAAC/6yQTW4CMQyF93OKKO2SId1Vym1McIfQmdiyvUEVd68yGfoDpa0Q2/e+98nJW+ec8495
+66PzOzPWGAIxFob0CgPqOlPQtMMJgiBTP2Y1v2qrlp+WMYS9UulbuiYZwlbgxfqn58XwsAxZiFEso/ro
+5gtqWvWajeR7XqtsOJ1lVz2f9QgbHH+samsHxno6bfaYzJ8jx9WFr8CEf9nUJJfhvzZlSHdUstD8lrsJ
+l8VNtu4X9/XP/wp+UCAChxM0ixt2oTl27wEAAP//8V0VBNACAAA=
 `,
 	},
 
 	"/repository/repository.schema.json": {
 		name:    "repository.schema.json",
 		local:   "repository/repository.schema.json",
-		size:    481,
+		size:    532,
 		modtime: 1546544639,
 		compressed: `
-H4sIAAAAAAAC/5TPTU4DMQwF4H1OEQWW0wmskHIKruCmZprSxpbjDapydzS/MMws6DLP/uSXu7HWuud0
-csG6syqX4D0xZob4CR2WNpEv8Yw38IJMrhnBGM0oeH8plA9j2pJ0/iTwoYeXtwk/TZCFGEUTFhfscLxP
-r3DE6+9kWAVVlPy+J6aV9v7a1E3cT/SLsW9XVFLu3Gpef161MVtDxwtGnc2y4jLc8E/H/TNrUhjio46F
-hg7/Umahmy9U8x0AAP//CWG/wuEBAAA=
+H4sIAAAAAAAC/5TPwU7DMAwG4HueIgocuwZOSHkKXsHLTJexxZbjC5ry7qhtNhjtgR7z25/852qste45
+HVyw7qjKJXhPjJkhfsKApU/kSzziBbwgk+tmMEc3FLw/Fcq7Oe1JBn8Q+NDdy1vDTw2yEKNowuKCnY6P
+6Rn2eP6dTKugipLf10Rb6a+vXV3E40S/GMd2RSXlwT3M68+rdmZpaH/CqDdzX3EZLvin4/qZR1IY4lbH
+QlOHbarN/0HM3S1+Xc13AAAA//9MzlcFFAIAAA==
 `,
 	},
 
