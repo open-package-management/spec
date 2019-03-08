@@ -24,24 +24,47 @@ local jid = {
   listNamespaces: 'https://openpackages.io/schema/namespace-list',
 };
 
+local quotaDescriptor(output=jsonschema) = {
+  type: 'object',
+  properties: {
+    limit: { type: types.uint64 },
+    used: { type: types.uint64 },
+  },
+};
+
+local labels(output=jsonschema) = {
+  type: 'object',
+  properties: {
+    labels: {
+      type: 'object',
+      properties: {
+        provider: { type: types.mapStringString(output) },
+        consumer: { type: types.mapStringString(output) },
+      },
+    },
+  },
+};
+
 
 local namespace(output=jsonschema) = {
+  local quotas = {
+    type: 'object',
+    properties: {
+      storage: quotaDescriptor(output),
+      projects: quotaDescriptor(output),
+      repositories: quotaDescriptor(output),
+    },
+  },
   [if output == jsonschema then '$id']: jid.namespace,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
   properties: {
     name: { type: 'string' },
-    storageLimit: types.uint64,
-    storageUsed: types.uint64,
-    repoLimit: types.uint64,
-    repoCount: types.uint64,
-    labels: types.mapStringString(output),
+    quotas: quotas,
+    labels: labels(output),
     status: {
       type: 'string',
-      enum: [
-        'ACTIVE',
-        'TERMINATING',
-      ],
+      enum: ['active', 'terminating'],
     },
   },
 };

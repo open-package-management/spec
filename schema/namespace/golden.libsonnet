@@ -14,15 +14,32 @@
 
 local namespace = {
   name: 'namespace-foo',
-  storageLimit: 548298572358,
-  storageUsed: 580324752,
-  repoLimit: 100,
-  repoCount: 23,
-  status: 'ACTIVE',
+  status: 'active',
+  quotas: {
+    storage: {
+      limit: 548298572358,
+      used: 580324752,
+    },
+    repositories: {
+      limit: 100,
+      used: 23,
+    },
+    projects: {
+      limit: 75,
+      used: 14,
+    },
+  },
   labels: {
-    team: 'team-foo',
-    manager: 'Tom Ripen',
-    costCenter: 'cs-foo',
+    provider: {
+      awsAccount: 'aws-account-foo',
+      pricingPlan: 'PREMIUM',
+      region: 'us-east-1',
+    },
+    consumer: {
+      team: 'team-foo',
+      manager: 'Tom Ripen',
+      costCenter: 'cs-foo',
+    },
   },
 };
 

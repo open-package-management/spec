@@ -6,37 +6,96 @@
          "items": {
             "properties": {
                "labels": {
+                  "properties": {
+                     "labels": {
+                        "properties": {
+                           "consumer": {
+                              "type": {
+                                 "type": "object"
+                              }
+                           },
+                           "provider": {
+                              "type": {
+                                 "type": "object"
+                              }
+                           }
+                        },
+                        "type": "object"
+                     }
+                  },
                   "type": "object"
                },
                "name": {
                   "type": "string"
                },
-               "repoCount": {
-                  "maximum": 18446744073709551616,
-                  "minimum": 0,
-                  "type": "integer"
-               },
-               "repoLimit": {
-                  "maximum": 18446744073709551616,
-                  "minimum": 0,
-                  "type": "integer"
+               "quotas": {
+                  "properties": {
+                     "projects": {
+                        "properties": {
+                           "limit": {
+                              "type": {
+                                 "maximum": 18446744073709551616,
+                                 "minimum": 0,
+                                 "type": "integer"
+                              }
+                           },
+                           "used": {
+                              "type": {
+                                 "maximum": 18446744073709551616,
+                                 "minimum": 0,
+                                 "type": "integer"
+                              }
+                           }
+                        },
+                        "type": "object"
+                     },
+                     "repositories": {
+                        "properties": {
+                           "limit": {
+                              "type": {
+                                 "maximum": 18446744073709551616,
+                                 "minimum": 0,
+                                 "type": "integer"
+                              }
+                           },
+                           "used": {
+                              "type": {
+                                 "maximum": 18446744073709551616,
+                                 "minimum": 0,
+                                 "type": "integer"
+                              }
+                           }
+                        },
+                        "type": "object"
+                     },
+                     "storage": {
+                        "properties": {
+                           "limit": {
+                              "type": {
+                                 "maximum": 18446744073709551616,
+                                 "minimum": 0,
+                                 "type": "integer"
+                              }
+                           },
+                           "used": {
+                              "type": {
+                                 "maximum": 18446744073709551616,
+                                 "minimum": 0,
+                                 "type": "integer"
+                              }
+                           }
+                        },
+                        "type": "object"
+                     }
+                  },
+                  "type": "object"
                },
                "status": {
                   "enum": [
-                     "ACTIVE",
-                     "TERMINATING"
+                     "active",
+                     "terminating"
                   ],
                   "type": "string"
-               },
-               "storageLimit": {
-                  "maximum": 18446744073709551616,
-                  "minimum": 0,
-                  "type": "integer"
-               },
-               "storageUsed": {
-                  "maximum": 18446744073709551616,
-                  "minimum": 0,
-                  "type": "integer"
                }
             },
             "type": "object"
