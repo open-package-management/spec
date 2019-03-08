@@ -17,6 +17,7 @@ local schema = import 'project.libsonnet';
 
 {
   'project.schema.json': schema.project(),
+  'project.golden.json': golden.project,
 
   'project-create.schema.json': schema.createProject(),
 

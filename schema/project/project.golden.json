@@ -1,0 +1,9 @@
+{
+   "labels": {
+      "costCenter": "cs-foo",
+      "manager": "Frank Ponnez",
+      "team": "team-example"
+   },
+   "name": "project-example",
+   "repositories": 34
+}
