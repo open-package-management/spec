@@ -1,4 +1,4 @@
-// Copyright © 2019 Titan Authors
+// Copyright © 2019 Open Package Management Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,8 +23,7 @@ import (
 // schemaFS returns an http.FileSystem containing OPR jsonschemas
 var schemaFS = _escFS(false)
 
-// Load returns a gojsonschema.Schema object.
-func Load(file, mediaType string) *gojsonschema.Schema {
+func load(file, mediaType string) *gojsonschema.Schema {
 	parts := []string{"file:///", file}
 	path := strings.Join(parts, "")
 	loader := gojsonschema.NewReferenceLoaderFileSystem(path, schemaFS)
