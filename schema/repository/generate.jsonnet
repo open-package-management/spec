@@ -17,6 +17,7 @@ local schema = import 'repository.libsonnet';
 
 {
   'repository.schema.json': schema.repo(),
+  'repository.golden.json': golden.repository,
 
   'repository-create.schema.json': schema.createRepo(),
 
