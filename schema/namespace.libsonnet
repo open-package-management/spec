@@ -26,6 +26,7 @@ local jid = {
 
 local quotaDescriptor(output=jsonschema) = {
   type: 'object',
+  additionalProperties: false,
   properties: {
     limit: types.uint64,
     used: types.uint64,
@@ -34,29 +35,28 @@ local quotaDescriptor(output=jsonschema) = {
 
 local labels(output=jsonschema) = {
   type: 'object',
+  additionalProperties: false,
   properties: {
-    labels: {
-      type: 'object',
-      properties: {
-        provider: types.mapStringString(output),
-        consumer: types.mapStringString(output),
-      },
-    },
+    provider: types.mapStringString(output),
+    consumer: types.mapStringString(output),
   },
 };
 
 local namespaceSchemaFunc(output=jsonschema) = {
   local quotas = {
     type: 'object',
+    additionalProperties: false,
     properties: {
       storage: quotaDescriptor(output),
       projects: quotaDescriptor(output),
       repositories: quotaDescriptor(output),
     },
   },
+
   [if output == jsonschema then '$id']: jid.namespace,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
+  additionalProperties: false,
   properties: {
     name: { type: 'string' },
     quotas: quotas,
@@ -104,6 +104,7 @@ local namespaceCreateSchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$schema']: V7,
   title: 'Create Namespace',
   type: 'object',
+  additionalProperties: false,
   properties: {
     storageLimit: types.uint64,
     repoLimit: types.uint64,
@@ -121,11 +122,12 @@ local namespaceCreateExample = {
   },
 };
 
-local namespaceListFunc(output=jsonschema) = {
+local namespaceListSchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.listNamespaces,
   [if output == jsonschema then '$schema']: V7,
   title: 'List Namespaces',
   type: 'object',
+  additionalProperties: false,
   properties: {
     namespaces: {
       type: 'array',
@@ -138,28 +140,62 @@ local namespaceListExample = {
   namespaces: [
     {
       name: 'namespace-foo',
-      storageLimit: 548298572358,
-      storageUsed: 580324752,
-      repoLimit: 100,
-      repoCount: 23,
       status: 'active',
+      quotas: {
+        storage: {
+          limit: 5092847552234,
+          used: 802833443,
+        },
+        repositories: {
+          limit: 100,
+          used: 23,
+        },
+        projects: {
+          limit: 75,
+          used: 14,
+        },
+      },
       labels: {
-        team: 'team-foo',
-        manager: 'Tom Ripen',
-        costCenter: 'cs-foo',
+        provider: {
+          awsAccount: 'aws-account-foo',
+          pricingPlan: 'premium',
+          region: 'us-east-1',
+        },
+        consumer: {
+          team: 'team-foo',
+          manager: 'Tom Ripen',
+          costCenter: 'cs-foo',
+        },
       },
     },
     {
       name: 'namespace-bar',
-      storageLimit: 850834823484,
-      storageUsed: 584920542,
-      repoLimit: 200,
-      repoCount: 74,
       status: 'active',
+      quotas: {
+        storage: {
+          limit: 2239424948849,
+          used: 85224342,
+        },
+        repositories: {
+          limit: 50,
+          used: 4,
+        },
+        projects: {
+          limit: 10,
+          used: 1,
+        },
+      },
       labels: {
-        team: 'team-bar',
-        manager: 'Frank Cousins',
-        costCenter: 'cs-bar',
+        provider: {
+          awsAccount: 'aws-account-bar',
+          pricingPlan: 'free',
+          region: 'us-east-1',
+        },
+        consumer: {
+          team: 'team-bar',
+          manager: 'Frank Cousins',
+          costCenter: 'cs-bar',
+        },
       },
     },
   ],
@@ -175,7 +211,7 @@ local namespaceListExample = {
     example:: namespaceCreateExample,
   },
   namespaceList:: {
-    schema:: namespaceListFunc,
+    schema:: namespaceListSchemaFunc,
     example:: namespaceListExample,
   },
 }

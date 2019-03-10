@@ -2,29 +2,63 @@
    "namespaces": [
       {
          "labels": {
-            "costCenter": "cs-foo",
-            "manager": "Tom Ripen",
-            "team": "team-foo"
+            "consumer": {
+               "costCenter": "cs-foo",
+               "manager": "Tom Ripen",
+               "team": "team-foo"
+            },
+            "provider": {
+               "awsAccount": "aws-account-foo",
+               "pricingPlan": "premium",
+               "region": "us-east-1"
+            }
          },
          "name": "namespace-foo",
-         "repoCount": 23,
-         "repoLimit": 100,
-         "status": "active",
-         "storageLimit": 548298572358,
-         "storageUsed": 580324752
+         "quotas": {
+            "projects": {
+               "limit": 75,
+               "used": 14
+            },
+            "repositories": {
+               "limit": 100,
+               "used": 23
+            },
+            "storage": {
+               "limit": 5092847552234,
+               "used": 802833443
+            }
+         },
+         "status": "active"
       },
       {
          "labels": {
-            "costCenter": "cs-bar",
-            "manager": "Frank Cousins",
-            "team": "team-bar"
+            "consumer": {
+               "costCenter": "cs-bar",
+               "manager": "Frank Cousins",
+               "team": "team-bar"
+            },
+            "provider": {
+               "awsAccount": "aws-account-bar",
+               "pricingPlan": "free",
+               "region": "us-east-1"
+            }
          },
          "name": "namespace-bar",
-         "repoCount": 74,
-         "repoLimit": 200,
-         "status": "active",
-         "storageLimit": 850834823484,
-         "storageUsed": 584920542
+         "quotas": {
+            "projects": {
+               "limit": 10,
+               "used": 1
+            },
+            "repositories": {
+               "limit": 50,
+               "used": 4
+            },
+            "storage": {
+               "limit": 2239424948849,
+               "used": 85224342
+            }
+         },
+         "status": "active"
       }
    ]
 }

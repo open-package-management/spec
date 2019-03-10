@@ -1,21 +1,19 @@
 {
    "$id": "https://openpackages.io/schema/namespace-list",
    "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": false,
    "properties": {
       "namespaces": {
          "items": {
+            "additionalProperties": false,
             "properties": {
                "labels": {
+                  "additionalProperties": false,
                   "properties": {
-                     "labels": {
-                        "properties": {
-                           "consumer": {
-                              "type": "object"
-                           },
-                           "provider": {
-                              "type": "object"
-                           }
-                        },
+                     "consumer": {
+                        "type": "object"
+                     },
+                     "provider": {
                         "type": "object"
                      }
                   },
@@ -25,8 +23,10 @@
                   "type": "string"
                },
                "quotas": {
+                  "additionalProperties": false,
                   "properties": {
                      "projects": {
+                        "additionalProperties": false,
                         "properties": {
                            "limit": {
                               "maximum": 18446744073709551616,
@@ -42,6 +42,7 @@
                         "type": "object"
                      },
                      "repositories": {
+                        "additionalProperties": false,
                         "properties": {
                            "limit": {
                               "maximum": 18446744073709551616,
@@ -57,6 +58,7 @@
                         "type": "object"
                      },
                      "storage": {
+                        "additionalProperties": false,
                         "properties": {
                            "limit": {
                               "maximum": 18446744073709551616,
