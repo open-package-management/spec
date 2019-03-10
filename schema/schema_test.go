@@ -16,7 +16,7 @@ type testParams struct {
 }
 
 var namespaceTestTable = []testParams{
-	{"namespace/namespace.example.json", MediaTypeNamespace, true},
+	{"namespace/namespace.single.example.json", MediaTypeNamespace, true},
 	{"namespace/namespace.create.example.json", MediaTypeNamespaceCreate, true},
 	{"namespace/namespace.list.example.json", MediaTypeNamespaceList, true},
 }

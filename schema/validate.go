@@ -42,7 +42,7 @@ func load(file, mediaType string) *gojsonschema.Schema {
 }
 
 func namespaceValidator() *gojsonschema.Schema {
-	path := "namespace/namespace.schema.json"
+	path := "namespace/namespace.single.schema.json"
 	mediaType := string(MediaTypeNamespace)
 	return load(path, mediaType)
 }
@@ -60,7 +60,7 @@ func namespaceListValidator() *gojsonschema.Schema {
 }
 
 func projectValidator() *gojsonschema.Schema {
-	path := "project/project.schema.json"
+	path := "project/project.single.schema.json"
 	mediaType := string(MediaTypeProject)
 	return load(path, mediaType)
 }
@@ -78,7 +78,7 @@ func projectListValidator() *gojsonschema.Schema {
 }
 
 func repositoryValidator() *gojsonschema.Schema {
-	path := "repository/repository.schema.json"
+	path := "repository/repository.single.schema.json"
 	mediaType := string(MediaTypeRepository)
 	return load(path, mediaType)
 }

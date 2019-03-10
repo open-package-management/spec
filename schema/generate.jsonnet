@@ -4,8 +4,8 @@ local r = import 'repository.libsonnet';
 local t = import 'tag.libsonnet';
 
 local namespaceFiles = {
-  'namespace/namespace.schema.json': ns.namespace.schema('jsonschema'),
-  'namespace/namespace.example.json': ns.namespace.example,
+  'namespace/namespace.single.schema.json': ns.namespace.schema('jsonschema'),
+  'namespace/namespace.single.example.json': ns.namespace.example,
 
   'namespace/namespace.create.schema.json': ns.namespaceCreate.schema('jsonschema'),
   'namespace/namespace.create.example.json': ns.namespaceCreate.example,
@@ -15,8 +15,8 @@ local namespaceFiles = {
 };
 
 local projectFiles = {
-  'project/project.schema.json': p.project.schema('jsonschema'),
-  'project/project.example.json': p.project.example,
+  'project/project.single.schema.json': p.project.schema('jsonschema'),
+  'project/project.single.example.json': p.project.example,
 
   'project/project.create.schema.json': p.projectCreate.schema('jsonschema'),
 
@@ -24,8 +24,8 @@ local projectFiles = {
 };
 
 local repositoryFiles = {
-  'repository/repository.schema.json': r.repository.schema('jsonschema'),
-  'repository/repository.example.json': r.repository.example,
+  'repository/repository.single.schema.json': r.repository.schema('jsonschema'),
+  'repository/repository.single.example.json': r.repository.example,
 
   'repository/repository.create.schema.json': r.repositoryCreate.schema('jsonschema'),
 
@@ -33,7 +33,7 @@ local repositoryFiles = {
 };
 
 local tagFiles = {
-  'tag/tag.example.json': t.tag.example,
+  'tag/tag.single.example.json': t.tag.example,
 };
 
 local allFiles = namespaceFiles + projectFiles + repositoryFiles + tagFiles;

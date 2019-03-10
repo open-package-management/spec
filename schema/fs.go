@@ -253,9 +253,9 @@ QIk05mdL8QdlKXnCFp+jaBVHURh/isMvy+VitVj5g3ZUrT30x3KFiiAH+wjOpYPsPe/uFY9NTwC3YLRD
 `,
 	},
 
-	"/namespace/namespace.schema.json": {
-		name:    "namespace.schema.json",
-		local:   "namespace/namespace.schema.json",
+	"/namespace/namespace.single.schema.json": {
+		name:    "namespace.single.schema.json",
+		local:   "namespace/namespace.single.schema.json",
 		size:    2598,
 		modtime: 1546544639,
 		compressed: `
@@ -295,9 +295,9 @@ gBluc2gE19gGc28+AwAA//8Lb3QTMAIAAA==
 `,
 	},
 
-	"/project/project.schema.json": {
-		name:    "project.schema.json",
-		local:   "project/project.schema.json",
+	"/project/project.single.schema.json": {
+		name:    "project.single.schema.json",
+		local:   "project/project.single.schema.json",
 		size:    430,
 		modtime: 1546544639,
 		compressed: `
@@ -334,9 +334,9 @@ IK74v7lx17bmF/bylK/BjxSIwOkSmsA1doM5N+8BAAD//8EyicoeAwAA
 `,
 	},
 
-	"/repository/repository.schema.json": {
-		name:    "repository.schema.json",
-		local:   "repository/repository.schema.json",
+	"/repository/repository.single.schema.json": {
+		name:    "repository.single.schema.json",
+		local:   "repository/repository.single.schema.json",
 		size:    2155,
 		modtime: 1546544639,
 		compressed: `
@@ -390,19 +390,19 @@ var _escDirs = map[string][]os.FileInfo{
 	"namespace": {
 		_escData["/namespace/namespace.create.schema.json"],
 		_escData["/namespace/namespace.list.schema.json"],
-		_escData["/namespace/namespace.schema.json"],
+		_escData["/namespace/namespace.single.schema.json"],
 	},
 
 	"project": {
 		_escData["/project/project.create.schema.json"],
 		_escData["/project/project.list.schema.json"],
-		_escData["/project/project.schema.json"],
+		_escData["/project/project.single.schema.json"],
 	},
 
 	"repository": {
 		_escData["/repository/repository.create.schema.json"],
 		_escData["/repository/repository.list.schema.json"],
-		_escData["/repository/repository.schema.json"],
+		_escData["/repository/repository.single.schema.json"],
 	},
 
 	"tag": {},
