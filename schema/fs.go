@@ -223,9 +223,9 @@ func _escFSMustString(useLocal bool, name string) string {
 
 var _escData = map[string]*_escFile{
 
-	"/namespace/create-namespace.schema.json": {
-		name:    "create-namespace.schema.json",
-		local:   "namespace/create-namespace.schema.json",
+	"/namespace/namespace.create.schema.json": {
+		name:    "namespace.create.schema.json",
+		local:   "namespace/namespace.create.schema.json",
 		size:    611,
 		modtime: 1546544639,
 		compressed: `
@@ -237,39 +237,41 @@ bkC8LkcRl3r9cUPyEwAA///4CI/0YwIAAA==
 `,
 	},
 
-	"/namespace/list-namespaces.schema.json": {
-		name:    "list-namespaces.schema.json",
-		local:   "namespace/list-namespaces.schema.json",
-		size:    1380,
+	"/namespace/namespace.list.schema.json": {
+		name:    "namespace.list.schema.json",
+		local:   "namespace/namespace.list.schema.json",
+		size:    3767,
 		modtime: 1546544639,
 		compressed: `
-H4sIAAAAAAAC/9SUy07yQBTH9zxFM9+3LEyJhWp3hBBDgiwMujEuhnIsBzuXzBwSieHdTS9cgi2ycIHb
-87+cX9qZ+Wx5nsf+44LFHlsSGRdzrg0oI5J3kYLroOYuWYIUXAkJzogE2hk6Yn4ZLcVdPOZ85bRql9OO
-tilfWPFG7SCqav5VQWO1AUsIjsVegZFP9zuOp7mABPJk1thykDMxh6xWylXaGMjB9XwFCbFTy9b/1pfj
-/dTmyKJKL2mzYPRQrxU1VUrxgXItWex1b8OwH4VhEN1EwV2v1+13+35tBFUVCfxzlKgIUrCXYk5Q4pVj
-OhK0bvzXoIptLzVaLg+Gs/HziPkN8mz0+DCeDmbj6T2rsbz6v3MgHGkrUvgTH7sgfXKwuCbQ1hns5ut+
-bNy7hLViszMVxaWNEVJWOCboyJseHqxKPtmybX0FAAD//5/7w6hkBQAA
+H4sIAAAAAAAC/+yXW66bMBCG31mF5faRHIjKCS1rqLqBqg8OTMmk+FJ7iBpV2XvFJRelEEiaVEcRr55/
+PjzW/0vDb48xxt9jxhPGV0TGJUGgDSgj0h8iB/eCOnDpCqQIlJDgjEhhVqAj7jetTXHfngTB2mk1a05f
+tM2DzIrvNAvjFvOubTRWG7CE4HjC6mtUp4dvnJ5WBSSQZ2e9lGO5EEsoOkvDzWMQV4BaaaqVKyXYIWGl
+pa2BEboTKdfLNaTEBzp2l+o7/+IAxuoNZm96AO+G0cZdoAvdCR3C/d1UW7/PqXuaI4sqH0P7WWoS/+Z8
+Y3V19/t5v0CJdGffSPELZSl5wuYfo2gRR1EYf4jDT6+v88V84Y8hoGoJoX+FUVER5GAfGbXSQTY91/8J
+dg+AWzDaIWk7ZPApCFMQnjkIjrQVOUwZmDLw9Bl44JbnSFDZu5eBqh/za08GRUq4Ad4XUQIrUQnqWhEZ
+Y9/8W1ZL78JA/fOfCg8qYa3Y7kU1uJFxQipqxWd0xL4c/wHb8tlXdt6fAAAA///+lfI3tw4AAA==
 `,
 	},
 
 	"/namespace/namespace.schema.json": {
 		name:    "namespace.schema.json",
 		local:   "namespace/namespace.schema.json",
-		size:    1001,
+		size:    3120,
 		modtime: 1546544639,
 		compressed: `
-H4sIAAAAAAAC/8SSTU/yQBSF9/0Vk3nfZWHaWKh2RwgxJEqMQTfGxVCuZZD5yMwl0ZD+d9NSoF8bN7js
-mfPcc3JvDx4hhP4Xa5oQukE0LmFMG1CGp588AzcUmrl0A5IzxSU4w1Og/pE66icyYWzrtBoc1aG2GVtb
-/oGDIK4m/KtAY7UBiwIcTUjZoFB3fAW7ulJaOSJY9dRHVJbhIfTzjly84LeBop1DK1RGG+/55Sv3vS6j
-V1tI8cScLbRYQqtjf8wFsWD0VO8VtjjJv4TcS5qQ8DaKxnEUBfFNHNyNRuE4HNdLSaEqZ9DXVSiEDGx/
-8oOQ4vrJDjnu28cEVU56a95vMl3OX2fUb6rL2fPjfDFZzhf3tcO9+7/Yu0NteQZ/tYAy/MXB+lrZ3rlA
-5y/OvZ8AAAD//yXw2tXpAwAA
+H4sIAAAAAAAC/+xWTW+jMBC98yuQd48kgJaELb+i96qHCUyJ0/ij9hC1ivjvFQlNSBpDmxwqVVzH780b
+j99ovPV832d/ecEyny2JtM3CUGmUGvJnKNFOuQptvkQBoQSBVkOOLNiz9vEPZhaGK6vkZB+dKlOGhYEn
+mkRpm+FPS9RGaTTE0bLM31XQRNewwHU34oT2EIZpLSJX0lYCjeO8gdCbRvfxTgaI0Mj7IbUjY7qNg3oI
+1RFnlgyXJeuD187DOvAGBdRihTk5BC6lvpi06fiGF2M/r+inN6jSm7zD7zIdnAOENeN8Nm2Xm3SkvFSK
+4Dsjqo1qxK8d0jUXnG5ylIBXLirBMj/+nyTzNEmi9F8a3c1m8Tye9zyn4LIlRl94dC4JSzQ3T1Flsfil
+973V5adwZlAry0kZh31Gd43uut5dlpSBEkdjjcb6meVsCag637Qodzd9OPUq5MQ37Z+8I4BGcAl0+tl5
+DIa3vXco5FOVtfceAAD//+qpM2YwDAAA
 `,
 	},
 
-	"/project/project-create.schema.json": {
-		name:    "project-create.schema.json",
-		local:   "project/project-create.schema.json",
+	"/project/project.create.schema.json": {
+		name:    "project.create.schema.json",
+		local:   "project/project.create.schema.json",
 		size:    330,
 		modtime: 1546544639,
 		compressed: `
@@ -280,9 +282,9 @@ MUoBAAA=
 `,
 	},
 
-	"/project/project-list.schema.json": {
-		name:    "project-list.schema.json",
-		local:   "project/project-list.schema.json",
+	"/project/project.list.schema.json": {
+		name:    "project.list.schema.json",
+		local:   "project/project.list.schema.json",
 		size:    560,
 		modtime: 1546544639,
 		compressed: `
@@ -322,6 +324,32 @@ WwAAAP//ALvfrXoBAAA=
 	"/repository/repository-list.schema.json": {
 		name:    "repository-list.schema.json",
 		local:   "repository/repository-list.schema.json",
+		size:    798,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/6yQzU7DMAzH732KKHBcF25IfRuvM1lGG1u2LxPau6M0HR8bBTT1+v/46W+/Nc45/5j2
+vnP+YMbahUCMmaF/hYi6TRS0P+AIQZCpHZKa39RW1S/NLoSjUm6ruiWJYS/wYu3T80x4mIssxCiWUH3n
+pgVFLXhNRvJdL1YyHK+0Rc6nPcAOhx+t4tqJsUyn3RF789eR8+aGl2HEv2hqknL8L00Z+hWRLDTdshrQ
+IK74v7lx17bmF/bylK/BjxSIwOkSmsA1doM5N+8BAAD//8EyicoeAwAA
+`,
+	},
+
+	"/repository/repository.create.schema.json": {
+		name:    "repository.create.schema.json",
+		local:   "repository/repository.create.schema.json",
+		size:    378,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/4SOTY6DMAyF9zlFlJklkJnVSDnFXCEEF0JpYjneVCh3ryDQH1GpS7/vfbZnIaVU375T
+RqqBGZPROiIEtO5se0iNjzq5AS5WE2CsHYFlUFXxCtldo/WYYqhL2kTqdUf2xPXP37bjaxORIgKxh6SM
+XH9Y0sm2MD0na9UyA4X/d8ZWaebfKh/ihfAVYfkuMfnQqxeeH1OuxNGJ7QiOd+de2fksPp1ZDxTvsDSL
+WwAAAP//ALvfrXoBAAA=
+`,
+	},
+
+	"/repository/repository.list.schema.json": {
+		name:    "repository.list.schema.json",
+		local:   "repository/repository.list.schema.json",
 		size:    798,
 		modtime: 1546544639,
 		compressed: `
@@ -373,6 +401,12 @@ jrxa00z7GwAA//+1jk5YawgAAA==
 		local: `repository`,
 		isDir: true,
 	},
+
+	"/tag": {
+		name:  "tag",
+		local: `tag`,
+		isDir: true,
+	},
 }
 
 var _escDirs = map[string][]os.FileInfo{
@@ -380,20 +414,24 @@ var _escDirs = map[string][]os.FileInfo{
 	".": {},
 
 	"namespace": {
-		_escData["/namespace/create-namespace.schema.json"],
-		_escData["/namespace/list-namespaces.schema.json"],
+		_escData["/namespace/namespace.create.schema.json"],
+		_escData["/namespace/namespace.list.schema.json"],
 		_escData["/namespace/namespace.schema.json"],
 	},
 
 	"project": {
-		_escData["/project/project-create.schema.json"],
-		_escData["/project/project-list.schema.json"],
+		_escData["/project/project.create.schema.json"],
+		_escData["/project/project.list.schema.json"],
 		_escData["/project/project.schema.json"],
 	},
 
 	"repository": {
 		_escData["/repository/repository-create.schema.json"],
 		_escData["/repository/repository-list.schema.json"],
+		_escData["/repository/repository.create.schema.json"],
+		_escData["/repository/repository.list.schema.json"],
 		_escData["/repository/repository.schema.json"],
 	},
+
+	"tag": {},
 }
