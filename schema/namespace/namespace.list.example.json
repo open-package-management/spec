@@ -9,7 +9,7 @@
          "name": "namespace-foo",
          "repoCount": 23,
          "repoLimit": 100,
-         "status": "ACTIVE",
+         "status": "active",
          "storageLimit": 548298572358,
          "storageUsed": 580324752
       },
@@ -22,7 +22,7 @@
          "name": "namespace-bar",
          "repoCount": 74,
          "repoLimit": 200,
-         "status": "ACTIVE",
+         "status": "active",
          "storageLimit": 850834823484,
          "storageUsed": 584920542
       }

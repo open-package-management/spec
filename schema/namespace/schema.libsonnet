@@ -27,8 +27,8 @@ local jid = {
 local quotaDescriptor(output=jsonschema) = {
   type: 'object',
   properties: {
-    limit: { type: types.uint64 },
-    used: { type: types.uint64 },
+    limit: types.uint64,
+    used: types.uint64,
   },
 };
 
@@ -38,8 +38,8 @@ local labels(output=jsonschema) = {
     labels: {
       type: 'object',
       properties: {
-        provider: { type: types.mapStringString(output) },
-        consumer: { type: types.mapStringString(output) },
+        provider: types.mapStringString(output),
+        consumer: types.mapStringString(output),
       },
     },
   },

@@ -13,20 +13,3 @@
 // limitations under the License.
 
 package namespace
-
-import (
-	"github.com/open-package-management/opm-spec/schema"
-
-	"github.com/xeipuuv/gojsonschema"
-)
-
-var (
-	createNamespaceFilepath = "namespace/create-namespace.schema.json"
-)
-
-// CreateNamespaceSchema returns a gojsonschema.Schema for validation.
-func CreateNamespaceSchema() *gojsonschema.Schema {
-	path := "namespace/create-namespace.schema.json"
-	mediatype := schema.MediaTypeCreateNamespace
-	return schema.Load(path, mediatype)
-}

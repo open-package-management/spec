@@ -7,24 +7,20 @@
             "labels": {
                "properties": {
                   "consumer": {
-                     "type": {
-                        "patternProperties": {
-                           ".{1,}": {
-                              "type": "string"
-                           }
-                        },
-                        "type": "object"
-                     }
+                     "patternProperties": {
+                        ".{1,}": {
+                           "type": "string"
+                        }
+                     },
+                     "type": "object"
                   },
                   "provider": {
-                     "type": {
-                        "patternProperties": {
-                           ".{1,}": {
-                              "type": "string"
-                           }
-                        },
-                        "type": "object"
-                     }
+                     "patternProperties": {
+                        ".{1,}": {
+                           "type": "string"
+                        }
+                     },
+                     "type": "object"
                   }
                },
                "type": "object"
@@ -40,18 +36,14 @@
             "projects": {
                "properties": {
                   "limit": {
-                     "type": {
-                        "maximum": 18446744073709551616,
-                        "minimum": 0,
-                        "type": "integer"
-                     }
+                     "maximum": 18446744073709551616,
+                     "minimum": 0,
+                     "type": "integer"
                   },
                   "used": {
-                     "type": {
-                        "maximum": 18446744073709551616,
-                        "minimum": 0,
-                        "type": "integer"
-                     }
+                     "maximum": 18446744073709551616,
+                     "minimum": 0,
+                     "type": "integer"
                   }
                },
                "type": "object"
@@ -59,18 +51,14 @@
             "repositories": {
                "properties": {
                   "limit": {
-                     "type": {
-                        "maximum": 18446744073709551616,
-                        "minimum": 0,
-                        "type": "integer"
-                     }
+                     "maximum": 18446744073709551616,
+                     "minimum": 0,
+                     "type": "integer"
                   },
                   "used": {
-                     "type": {
-                        "maximum": 18446744073709551616,
-                        "minimum": 0,
-                        "type": "integer"
-                     }
+                     "maximum": 18446744073709551616,
+                     "minimum": 0,
+                     "type": "integer"
                   }
                },
                "type": "object"
@@ -78,18 +66,14 @@
             "storage": {
                "properties": {
                   "limit": {
-                     "type": {
-                        "maximum": 18446744073709551616,
-                        "minimum": 0,
-                        "type": "integer"
-                     }
+                     "maximum": 18446744073709551616,
+                     "minimum": 0,
+                     "type": "integer"
                   },
                   "used": {
-                     "type": {
-                        "maximum": 18446744073709551616,
-                        "minimum": 0,
-                        "type": "integer"
-                     }
+                     "maximum": 18446744073709551616,
+                     "minimum": 0,
+                     "type": "integer"
                   }
                },
                "type": "object"

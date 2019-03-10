@@ -15,7 +15,10 @@
 package schema
 
 const (
-	MediaTypeNamespace  = "application/vnd.opm.namespace.v1+json"
+	MediaTypeNamespace       = "application/vnd.opm.namespace.v1+json"
+	MediaTypeNamespaceCreate = "application/vnd.opm.namespace.create.v1+json"
+	MediaTypeNamespaceList   = "application/vnd.opm.namespace.list.v1+json"
+
 	MediaTypeProject    = "application/vnd.opm.project.v1+json"
 	MediaTypeRepository = "application/vnd.opm.repository.v1+json"
 	MediaTypeTag        = "application/vnd.opm.tag.v1+json"

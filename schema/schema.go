@@ -27,7 +27,11 @@ func load(file, mediaType string) *gojsonschema.Schema {
 	parts := []string{"file:///", file}
 	path := strings.Join(parts, "")
 	loader := gojsonschema.NewReferenceLoaderFileSystem(path, schemaFS)
-	schema, _ := gojsonschema.NewSchema(loader)
+	schema, err := gojsonschema.NewSchema(loader)
+	if err != nil {
+		panic(err)
+	}
+
 	schema.SetRootSchemaName(mediaType)
 	return schema
 }

@@ -47,7 +47,7 @@ local listNamespaces = {
       storageUsed: 580324752,
       repoLimit: 100,
       repoCount: 23,
-      status: 'ACTIVE',
+      status: 'active',
       labels: {
         team: 'team-foo',
         manager: 'Tom Ripen',
@@ -60,7 +60,7 @@ local listNamespaces = {
       storageUsed: 584920542,
       repoLimit: 200,
       repoCount: 74,
-      status: 'ACTIVE',
+      status: 'active',
       labels: {
         team: 'team-bar',
         manager: 'Frank Cousins',
