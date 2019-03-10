@@ -16,10 +16,10 @@ local example = import 'examples.libsonnet';
 local schema = import 'schema.libsonnet';
 
 {
-  'repository.schema.json': schema.repo(),
-  'repository.example.json': example.repository,
+  'single.schema.json': schema.repo(),
+  'single.example.json': example.repository,
 
-  'repository.create.schema.json': schema.createRepo(),
+  'create.schema.json': schema.createRepo(),
 
-  'repository.list.schema.json': schema.listRepos(),
+  'list.schema.json': schema.listRepos(),
 }

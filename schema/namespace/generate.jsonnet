@@ -16,12 +16,12 @@ local example = import 'examples.libsonnet';
 local schema = import 'schema.libsonnet';
 
 {
-  'namespace.schema.json': schema.namespace(),
-  'namespace.example.json': example.namespace,
+  'single.schema.json': schema.namespace(),
+  'single.example.json': example.namespace,
 
-  'namespace.create.schema.json': schema.createNamespace(),
-  'namespace.create.example.json': example.createNamespace,
+  'create.schema.json': schema.createNamespace(),
+  'create.example.json': example.createNamespace,
 
-  'namespace.list.schema.json': schema.listNamespaces(),
-  'namespace.list.example.json': example.listNamespaces,
+  'list.schema.json': schema.listNamespaces(),
+  'list.example.json': example.listNamespaces,
 }
