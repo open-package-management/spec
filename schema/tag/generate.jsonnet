@@ -1,5 +1,5 @@
-local golden = import 'golden.libsonnet';
+local example = import 'examples.libsonnet';
 
 {
-  'tag.golden.json': golden.tag,
+  'tag.example.json': example.tag,
 }
