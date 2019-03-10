@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local golden = import 'golden.libsonnet';
-local schema = import 'project.libsonnet';
+local example = import 'examples.libsonnet';
+local schema = import 'schema.libsonnet';
 
 {
   'project.schema.json': schema.project(),
-  'project.golden.json': golden.project,
+  'project.example.json': example.project,
 
-  'project-create.schema.json': schema.createProject(),
+  'project.create.schema.json': schema.createProject(),
 
-  'project-list.schema.json': schema.listProjects(),
+  'project.list.schema.json': schema.listProjects(),
 }
