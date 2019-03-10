@@ -3,11 +3,8 @@ test:
 	go test ./...
 
 .PHONY: schemas
-schemas:
-	find schema -name generate.jsonnet -execdir jsonnet -m . {} \;
-
-.PHONY: embed-schemas
-embed-schemas:
+schemas: clean
+	jsonnet -m schema schema/generate.jsonnet
 	printf "%s\n\n%s\n" "$$(cat .header)" "$$(go generate schema/generate.go)" > schema/fs.go
 
 .PHONY: openapi
@@ -16,4 +13,4 @@ openapi:
 
 .PHONY: clean
 clean:
-	rm */**/*.json
+	rm -rf *.json
