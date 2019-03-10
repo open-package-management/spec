@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local types = import '../types.libsonnet';
+local types = import 'types.libsonnet';
 
 local openapi = 'openapi';
 local jsonschema = 'jsonschema';
@@ -24,7 +24,7 @@ local jid = {
   listProjects: 'https://openpackages.io/schema/project-list',
 };
 
-local project(output=jsonschema) = {
+local projectSchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.project,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
@@ -35,7 +35,17 @@ local project(output=jsonschema) = {
   },
 };
 
-local createProject(output=jsonschema) = {
+local projectExample = {
+  name: 'project-example',
+  repositories: 34,
+  labels: {
+    team: 'team-example',
+    manager: 'Frank Ponnez',
+    costCenter: 'cs-foo',
+  },
+};
+
+local projectCreateSchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.createProject,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
@@ -44,20 +54,27 @@ local createProject(output=jsonschema) = {
   },
 };
 
-local listProjects(output=jsonschema) = {
+local projectListSchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.listProjects,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
   properties: {
     projects: {
       type: 'array',
-      items: project(''),
+      items: projectSchemaFunc(''),
     },
   },
 };
 
 {
-  project:: project,
-  createProject:: createProject,
-  listProjects:: listProjects,
+  project:: {
+    schema:: projectSchemaFunc,
+    example:: projectExample,
+  },
+  projectCreate:: {
+    schema:: projectCreateSchemaFunc,
+  },
+  projectList:: {
+    schema:: projectListSchemaFunc,
+  },
 }

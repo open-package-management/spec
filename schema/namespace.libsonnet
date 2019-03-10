@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local types = import '../types.libsonnet';
+local types = import 'types.libsonnet';
 
 local openapi = 'openapi';
 local jsonschema = 'jsonschema';
@@ -45,7 +45,7 @@ local labels(output=jsonschema) = {
   },
 };
 
-local namespace(output=jsonschema) = {
+local namespaceSchemaFunc(output=jsonschema) = {
   local quotas = {
     type: 'object',
     properties: {
@@ -68,7 +68,38 @@ local namespace(output=jsonschema) = {
   },
 };
 
-local createNamespace(output=jsonschema) = {
+local namespaceExample = {
+  name: 'namespace-foo',
+  status: 'active',
+  quotas: {
+    storage: {
+      limit: 548298572358,
+      used: 580324752,
+    },
+    repositories: {
+      limit: 100,
+      used: 23,
+    },
+    projects: {
+      limit: 75,
+      used: 14,
+    },
+  },
+  labels: {
+    provider: {
+      awsAccount: 'aws-account-foo',
+      pricingPlan: 'PREMIUM',
+      region: 'us-east-1',
+    },
+    consumer: {
+      team: 'team-foo',
+      manager: 'Tom Ripen',
+      costCenter: 'cs-foo',
+    },
+  },
+};
+
+local namespaceCreateSchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.createNamespace,
   [if output == jsonschema then '$schema']: V7,
   title: 'Create Namespace',
@@ -80,7 +111,17 @@ local createNamespace(output=jsonschema) = {
   },
 };
 
-local listNamespaces(output=jsonschema) = {
+local namespaceCreateExample = {
+  repoLimit: 100,
+  storageLimit: 100000000000,
+  labels: {
+    team: 'team-foo',
+    manager: 'Tom Ripen',
+    costCenter: 'cs-foo',
+  },
+};
+
+local namespaceListFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.listNamespaces,
   [if output == jsonschema then '$schema']: V7,
   title: 'List Namespaces',
@@ -88,13 +129,53 @@ local listNamespaces(output=jsonschema) = {
   properties: {
     namespaces: {
       type: 'array',
-      items: namespace(''),
+      items: namespaceSchemaFunc(''),
     },
   },
 };
 
+local namespaceListExample = {
+  namespaces: [
+    {
+      name: 'namespace-foo',
+      storageLimit: 548298572358,
+      storageUsed: 580324752,
+      repoLimit: 100,
+      repoCount: 23,
+      status: 'active',
+      labels: {
+        team: 'team-foo',
+        manager: 'Tom Ripen',
+        costCenter: 'cs-foo',
+      },
+    },
+    {
+      name: 'namespace-bar',
+      storageLimit: 850834823484,
+      storageUsed: 584920542,
+      repoLimit: 200,
+      repoCount: 74,
+      status: 'active',
+      labels: {
+        team: 'team-bar',
+        manager: 'Frank Cousins',
+        costCenter: 'cs-bar',
+      },
+    },
+  ],
+};
+
 {
-  namespace:: namespace,
-  createNamespace:: createNamespace,
-  listNamespaces:: listNamespaces,
+  namespace:: {
+    schema:: namespaceSchemaFunc,
+    example:: namespaceExample,
+  },
+  namespaceCreate:: {
+    schema:: namespaceCreateSchemaFunc,
+    example:: namespaceCreateExample,
+  },
+  namespaceList:: {
+    schema:: namespaceListFunc,
+    example:: namespaceListExample,
+  },
 }

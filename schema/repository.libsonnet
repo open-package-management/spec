@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local types = import '../types.libsonnet';
+local types = import 'types.libsonnet';
 
 local openapi = 'openapi';
 local jsonschema = 'jsonschema';
@@ -78,7 +78,7 @@ local descriptor(output=jsonschema) = {
   ],
 };
 
-local repo(output=jsonschema) = {
+local repositorySchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.repo,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
@@ -100,7 +100,48 @@ local repo(output=jsonschema) = {
   },
 };
 
-local createRepo(output=jsonschema) = {
+local repositoryExample = {
+  name: 'repository-example-foo',
+  namespace: 'namespace-example-foo',
+  project: 'project-example-foo',
+  package: {
+    type: 'OCI Image',
+    documentation: 'https://github.com/opencontainers/image-spec',
+    icon: 'https://opencontainers/static/icon-small.png',
+    clients: {
+      exampleCli: {
+        command: 'example-cli',
+        actions: {
+          download: ['download', '--image', '{package}', '--tag', '{tag}'],
+          upload: ['upload', '--image', '{package}', '--tag', '{tag}'],
+        },
+      },
+      docker: {
+        command: 'docker',
+        actions: {
+          download: ['pull', '{package}:{tag}'],
+          upload: ['push', '{package}:{tag}'],
+        },
+      },
+      skopeo: {
+        command: 'skopeo',
+        actions: {
+          download: ['pull', '{package}:{tag}'],
+          upload: ['push', '{package}:{tag}'],
+        },
+      },
+    },
+  },
+
+  size: 34252334,
+  labels: {
+    team: 'team-example',
+    maintainer: 'Billy Seiken',
+    costCenter: 'cs-foo',
+  },
+};
+
+local repositoryCreateSchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.createRepo,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
@@ -110,20 +151,27 @@ local createRepo(output=jsonschema) = {
   },
 };
 
-local listRepos(output=jsonschema) = {
+local repositoryListSchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.listRepos,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
   properties: {
     repositories: {
       type: 'array',
-      items: repo(''),
+      items: repositorySchemaFunc(''),
     },
   },
 };
 
 {
-  repo:: repo,
-  createRepo:: createRepo,
-  listRepos:: listRepos,
+  repository:: {
+    schema:: repositorySchemaFunc,
+    example:: repositoryExample,
+  },
+  repositoryCreate:: {
+    schema:: repositoryCreateSchemaFunc,
+  },
+  repositoryList:: {
+    schema:: repositoryListSchemaFunc,
+  },
 }
