@@ -223,9 +223,9 @@ func _escFSMustString(useLocal bool, name string) string {
 
 var _escData = map[string]*_escFile{
 
-	"/namespace/namespace.create.schema.json": {
-		name:    "namespace.create.schema.json",
-		local:   "namespace/namespace.create.schema.json",
+	"/namespace/create.schema.json": {
+		name:    "create.schema.json",
+		local:   "namespace/create.schema.json",
 		size:    611,
 		modtime: 1546544639,
 		compressed: `
@@ -237,9 +237,9 @@ bkC8LkcRl3r9cUPyEwAA///4CI/0YwIAAA==
 `,
 	},
 
-	"/namespace/namespace.list.schema.json": {
-		name:    "namespace.list.schema.json",
-		local:   "namespace/namespace.list.schema.json",
+	"/namespace/list.schema.json": {
+		name:    "list.schema.json",
+		local:   "namespace/list.schema.json",
 		size:    3131,
 		modtime: 1546544639,
 		compressed: `
@@ -253,9 +253,9 @@ QIk05mdL8QdlKXnCFp+jaBVHURh/isMvy+VitVj5g3ZUrT30x3KFiiAH+wjOpYPsPe/uFY9NTwC3YLRD
 `,
 	},
 
-	"/namespace/namespace.schema.json": {
-		name:    "namespace.schema.json",
-		local:   "namespace/namespace.schema.json",
+	"/namespace/single.schema.json": {
+		name:    "single.schema.json",
+		local:   "namespace/single.schema.json",
 		size:    2598,
 		modtime: 1546544639,
 		compressed: `
@@ -269,9 +269,9 @@ vOcAAAD//1xe3uEmCgAA
 `,
 	},
 
-	"/project/project.create.schema.json": {
-		name:    "project.create.schema.json",
-		local:   "project/project.create.schema.json",
+	"/project/create.schema.json": {
+		name:    "create.schema.json",
+		local:   "project/create.schema.json",
 		size:    330,
 		modtime: 1546544639,
 		compressed: `
@@ -282,9 +282,9 @@ MUoBAAA=
 `,
 	},
 
-	"/project/project.list.schema.json": {
-		name:    "project.list.schema.json",
-		local:   "project/project.list.schema.json",
+	"/project/list.schema.json": {
+		name:    "list.schema.json",
+		local:   "project/list.schema.json",
 		size:    560,
 		modtime: 1546544639,
 		compressed: `
@@ -295,9 +295,9 @@ gBluc2gE19gGc28+AwAA//8Lb3QTMAIAAA==
 `,
 	},
 
-	"/project/project.schema.json": {
-		name:    "project.schema.json",
-		local:   "project/project.schema.json",
+	"/project/single.schema.json": {
+		name:    "single.schema.json",
+		local:   "project/single.schema.json",
 		size:    430,
 		modtime: 1546544639,
 		compressed: `
@@ -308,9 +308,9 @@ mQ5Q4/BMligwY/TfV8YWqabPIp/wfOE/wnld4uh8q3b3/HjlQpydUC8/FYeI8jDiYeN1zV5JBPZFT9zl
 `,
 	},
 
-	"/repository/repository-create.schema.json": {
-		name:    "repository-create.schema.json",
-		local:   "repository/repository-create.schema.json",
+	"/repository/create.schema.json": {
+		name:    "create.schema.json",
+		local:   "repository/create.schema.json",
 		size:    378,
 		modtime: 1546544639,
 		compressed: `
@@ -321,9 +321,9 @@ WwAAAP//ALvfrXoBAAA=
 `,
 	},
 
-	"/repository/repository-list.schema.json": {
-		name:    "repository-list.schema.json",
-		local:   "repository/repository-list.schema.json",
+	"/repository/list.schema.json": {
+		name:    "list.schema.json",
+		local:   "repository/list.schema.json",
 		size:    798,
 		modtime: 1546544639,
 		compressed: `
@@ -334,35 +334,9 @@ IK74v7lx17bmF/bylK/BjxSIwOkSmsA1doM5N+8BAAD//8EyicoeAwAA
 `,
 	},
 
-	"/repository/repository.create.schema.json": {
-		name:    "repository.create.schema.json",
-		local:   "repository/repository.create.schema.json",
-		size:    378,
-		modtime: 1546544639,
-		compressed: `
-H4sIAAAAAAAC/4SOTY6DMAyF9zlFlJklkJnVSDnFXCEEF0JpYjneVCh3ryDQH1GpS7/vfbZnIaVU375T
-RqqBGZPROiIEtO5se0iNjzq5AS5WE2CsHYFlUFXxCtldo/WYYqhL2kTqdUf2xPXP37bjaxORIgKxh6SM
-XH9Y0sm2MD0na9UyA4X/d8ZWaebfKh/ihfAVYfkuMfnQqxeeH1OuxNGJ7QiOd+de2fksPp1ZDxTvsDSL
-WwAAAP//ALvfrXoBAAA=
-`,
-	},
-
-	"/repository/repository.list.schema.json": {
-		name:    "repository.list.schema.json",
-		local:   "repository/repository.list.schema.json",
-		size:    798,
-		modtime: 1546544639,
-		compressed: `
-H4sIAAAAAAAC/6yQzU7DMAzH732KKHBcF25IfRuvM1lGG1u2LxPau6M0HR8bBTT1+v/46W+/Nc45/5j2
-vnP+YMbahUCMmaF/hYi6TRS0P+AIQZCpHZKa39RW1S/NLoSjUm6ruiWJYS/wYu3T80x4mIssxCiWUH3n
-pgVFLXhNRvJdL1YyHK+0Rc6nPcAOhx+t4tqJsUyn3RF789eR8+aGl2HEv2hqknL8L00Z+hWRLDTdshrQ
-IK74v7lx17bmF/bylK/BjxSIwOkSmsA1doM5N+8BAAD//8EyicoeAwAA
-`,
-	},
-
-	"/repository/repository.schema.json": {
-		name:    "repository.schema.json",
-		local:   "repository/repository.schema.json",
+	"/repository/single.schema.json": {
+		name:    "single.schema.json",
+		local:   "repository/single.schema.json",
 		size:    2155,
 		modtime: 1546544639,
 		compressed: `
@@ -414,23 +388,21 @@ var _escDirs = map[string][]os.FileInfo{
 	".": {},
 
 	"namespace": {
-		_escData["/namespace/namespace.create.schema.json"],
-		_escData["/namespace/namespace.list.schema.json"],
-		_escData["/namespace/namespace.schema.json"],
+		_escData["/namespace/create.schema.json"],
+		_escData["/namespace/list.schema.json"],
+		_escData["/namespace/single.schema.json"],
 	},
 
 	"project": {
-		_escData["/project/project.create.schema.json"],
-		_escData["/project/project.list.schema.json"],
-		_escData["/project/project.schema.json"],
+		_escData["/project/create.schema.json"],
+		_escData["/project/list.schema.json"],
+		_escData["/project/single.schema.json"],
 	},
 
 	"repository": {
-		_escData["/repository/repository-create.schema.json"],
-		_escData["/repository/repository-list.schema.json"],
-		_escData["/repository/repository.create.schema.json"],
-		_escData["/repository/repository.list.schema.json"],
-		_escData["/repository/repository.schema.json"],
+		_escData["/repository/create.schema.json"],
+		_escData["/repository/list.schema.json"],
+		_escData["/repository/single.schema.json"],
 	},
 
 	"tag": {},
