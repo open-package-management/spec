@@ -1,0 +1,33 @@
+{
+   "$id": "https://openpackages.io/schema/repo-list",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "properties": {
+      "repositories": {
+         "items": {
+            "properties": {
+               "labels": {
+                  "type": "object"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "namespace": {
+                  "type": "string"
+               },
+               "project": {
+                  "type": "string"
+               },
+               "tags": {
+                  "type": "object"
+               },
+               "type": {
+                  "type": "string"
+               }
+            },
+            "type": "object"
+         },
+         "type": "array"
+      }
+   },
+   "type": "object"
+}
