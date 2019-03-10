@@ -35,3 +35,57 @@ func load(file, mediaType string) *gojsonschema.Schema {
 	schema.SetRootSchemaName(mediaType)
 	return schema
 }
+
+func namespace() *gojsonschema.Schema {
+	path := "namespace/namespace.schema.json"
+	mediaType := string(MediaTypeNamespace)
+	return load(path, mediaType)
+}
+
+func namespaceCreate() *gojsonschema.Schema {
+	path := "namespace/namespace.create.schema.json"
+	mediaType := string(MediaTypeNamespaceCreate)
+	return load(path, mediaType)
+}
+
+func namespaceList() *gojsonschema.Schema {
+	path := "namespace/namespace.list.schema.json"
+	mediaType := string(MediaTypeNamespaceList)
+	return load(path, mediaType)
+}
+
+func project() *gojsonschema.Schema {
+	path := "project/project.schema.json"
+	mediaType := string(MediaTypeProject)
+	return load(path, mediaType)
+}
+
+func projectCreate() *gojsonschema.Schema {
+	path := "project/project.create.schema.json"
+	mediaType := string(MediaTypeProjectCreate)
+	return load(path, mediaType)
+}
+
+func projectList() *gojsonschema.Schema {
+	path := "project/project.list.schema.json"
+	mediaType := string(MediaTypeProjectList)
+	return load(path, mediaType)
+}
+
+func repository() *gojsonschema.Schema {
+	path := "repository/repository.schema.json"
+	mediaType := string(MediaTypeRepository)
+	return load(path, mediaType)
+}
+
+func repositoryCreate() *gojsonschema.Schema {
+	path := "repository/repository.create.schema.json"
+	mediaType := string(MediaTypeRepositoryCreate)
+	return load(path, mediaType)
+}
+
+func repositoryList() *gojsonschema.Schema {
+	path := "repository/repository.list.schema.json"
+	mediaType := string(MediaTypeRepositoryList)
+	return load(path, mediaType)
+}
