@@ -1,6 +1,9 @@
+.PHONY: test
+test:
+	go test ./...
 
 .PHONY: schemas
-schemas: embed-schemas
+schemas:
 	find schema -name generate.jsonnet -execdir jsonnet -m . {} \;
 
 .PHONY: embed-schemas
