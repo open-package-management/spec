@@ -27,10 +27,15 @@ var projectTestTable = []testParams{
 	//	{"project/project.list.example.json", true, projectList},
 }
 
+var repositoryTestTable = []testParams{
+	{"repository/repository.example.json", true, repository},
+}
+
 func TestSchemas(t *testing.T) {
 	schemaTables := [][]testParams{
 		namespaceTestTable,
 		projectTestTable,
+		repositoryTestTable,
 	}
 
 	for _, tt := range schemaTables {
