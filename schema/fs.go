@@ -223,9 +223,9 @@ func _escFSMustString(useLocal bool, name string) string {
 
 var _escData = map[string]*_escFile{
 
-	"/namespace/create.schema.json": {
-		name:    "create.schema.json",
-		local:   "namespace/create.schema.json",
+	"/namespace/namespace.create.schema.json": {
+		name:    "namespace.create.schema.json",
+		local:   "namespace/namespace.create.schema.json",
 		size:    611,
 		modtime: 1546544639,
 		compressed: `
@@ -237,9 +237,9 @@ bkC8LkcRl3r9cUPyEwAA///4CI/0YwIAAA==
 `,
 	},
 
-	"/namespace/list.schema.json": {
-		name:    "list.schema.json",
-		local:   "namespace/list.schema.json",
+	"/namespace/namespace.list.schema.json": {
+		name:    "namespace.list.schema.json",
+		local:   "namespace/namespace.list.schema.json",
 		size:    3131,
 		modtime: 1546544639,
 		compressed: `
@@ -253,9 +253,9 @@ QIk05mdL8QdlKXnCFp+jaBVHURh/isMvy+VitVj5g3ZUrT30x3KFiiAH+wjOpYPsPe/uFY9NTwC3YLRD
 `,
 	},
 
-	"/namespace/single.schema.json": {
-		name:    "single.schema.json",
-		local:   "namespace/single.schema.json",
+	"/namespace/namespace.schema.json": {
+		name:    "namespace.schema.json",
+		local:   "namespace/namespace.schema.json",
 		size:    2598,
 		modtime: 1546544639,
 		compressed: `
@@ -269,9 +269,9 @@ vOcAAAD//1xe3uEmCgAA
 `,
 	},
 
-	"/project/create.schema.json": {
-		name:    "create.schema.json",
-		local:   "project/create.schema.json",
+	"/project/project.create.schema.json": {
+		name:    "project.create.schema.json",
+		local:   "project/project.create.schema.json",
 		size:    330,
 		modtime: 1546544639,
 		compressed: `
@@ -282,9 +282,9 @@ MUoBAAA=
 `,
 	},
 
-	"/project/list.schema.json": {
-		name:    "list.schema.json",
-		local:   "project/list.schema.json",
+	"/project/project.list.schema.json": {
+		name:    "project.list.schema.json",
+		local:   "project/project.list.schema.json",
 		size:    560,
 		modtime: 1546544639,
 		compressed: `
@@ -295,9 +295,9 @@ gBluc2gE19gGc28+AwAA//8Lb3QTMAIAAA==
 `,
 	},
 
-	"/project/single.schema.json": {
-		name:    "single.schema.json",
-		local:   "project/single.schema.json",
+	"/project/project.schema.json": {
+		name:    "project.schema.json",
+		local:   "project/project.schema.json",
 		size:    430,
 		modtime: 1546544639,
 		compressed: `
@@ -308,9 +308,9 @@ mQ5Q4/BMligwY/TfV8YWqabPIp/wfOE/wnld4uh8q3b3/HjlQpydUC8/FYeI8jDiYeN1zV5JBPZFT9zl
 `,
 	},
 
-	"/repository/create.schema.json": {
-		name:    "create.schema.json",
-		local:   "repository/create.schema.json",
+	"/repository/repository.create.schema.json": {
+		name:    "repository.create.schema.json",
+		local:   "repository/repository.create.schema.json",
 		size:    378,
 		modtime: 1546544639,
 		compressed: `
@@ -321,9 +321,9 @@ WwAAAP//ALvfrXoBAAA=
 `,
 	},
 
-	"/repository/list.schema.json": {
-		name:    "list.schema.json",
-		local:   "repository/list.schema.json",
+	"/repository/repository.list.schema.json": {
+		name:    "repository.list.schema.json",
+		local:   "repository/repository.list.schema.json",
 		size:    798,
 		modtime: 1546544639,
 		compressed: `
@@ -334,9 +334,9 @@ IK74v7lx17bmF/bylK/BjxSIwOkSmsA1doM5N+8BAAD//8EyicoeAwAA
 `,
 	},
 
-	"/repository/single.schema.json": {
-		name:    "single.schema.json",
-		local:   "repository/single.schema.json",
+	"/repository/repository.schema.json": {
+		name:    "repository.schema.json",
+		local:   "repository/repository.schema.json",
 		size:    2155,
 		modtime: 1546544639,
 		compressed: `
@@ -388,21 +388,21 @@ var _escDirs = map[string][]os.FileInfo{
 	".": {},
 
 	"namespace": {
-		_escData["/namespace/create.schema.json"],
-		_escData["/namespace/list.schema.json"],
-		_escData["/namespace/single.schema.json"],
+		_escData["/namespace/namespace.create.schema.json"],
+		_escData["/namespace/namespace.list.schema.json"],
+		_escData["/namespace/namespace.schema.json"],
 	},
 
 	"project": {
-		_escData["/project/create.schema.json"],
-		_escData["/project/list.schema.json"],
-		_escData["/project/single.schema.json"],
+		_escData["/project/project.create.schema.json"],
+		_escData["/project/project.list.schema.json"],
+		_escData["/project/project.schema.json"],
 	},
 
 	"repository": {
-		_escData["/repository/create.schema.json"],
-		_escData["/repository/list.schema.json"],
-		_escData["/repository/single.schema.json"],
+		_escData["/repository/repository.create.schema.json"],
+		_escData["/repository/repository.list.schema.json"],
+		_escData["/repository/repository.schema.json"],
 	},
 
 	"tag": {},

@@ -1,4 +1,4 @@
-local tag = {
+local tagExample = {
   name: 'v1.0.1',
   clients: {
     exampleCli: {
@@ -26,5 +26,7 @@ local tag = {
 };
 
 {
-  tag: tag,
+  tag:: {
+    example:: tagExample,
+  },
 }

@@ -1,36 +1,41 @@
 local ns = import 'namespace.libsonnet';
 local p = import 'project.libsonnet';
 local r = import 'repository.libsonnet';
+local t = import 'tag.libsonnet';
 
 local namespaceFiles = {
-  'namespace/single.schema.json': ns.namespace.schema('jsonschema'),
-  'namespace/single.example.json': ns.namespace.example,
+  'namespace/namespace.schema.json': ns.namespace.schema('jsonschema'),
+  'namespace/namespace.example.json': ns.namespace.example,
 
-  'namespace/create.schema.json': ns.namespaceCreate.schema('jsonschema'),
-  'namespace/create.example.json': ns.namespaceCreate.example,
+  'namespace/namespace.create.schema.json': ns.namespaceCreate.schema('jsonschema'),
+  'namespace/namespace.create.example.json': ns.namespaceCreate.example,
 
-  'namespace/list.schema.json': ns.namespaceList.schema('jsonschema'),
-  'namespace/list.example.json': ns.namespaceList.example,
+  'namespace/namespace.list.schema.json': ns.namespaceList.schema('jsonschema'),
+  'namespace/namespace.list.example.json': ns.namespaceList.example,
 };
 
 local projectFiles = {
-  'project/single.schema.json': p.project.schema('jsonschema'),
-  'project/single.example.json': p.project.example,
+  'project/project.schema.json': p.project.schema('jsonschema'),
+  'project/project.example.json': p.project.example,
 
-  'project/create.schema.json': p.projectCreate.schema('jsonschema'),
+  'project/project.create.schema.json': p.projectCreate.schema('jsonschema'),
 
-  'project/list.schema.json': p.projectList.schema('jsonschema'),
+  'project/project.list.schema.json': p.projectList.schema('jsonschema'),
 };
 
 local repositoryFiles = {
-  'repository/single.schema.json': r.repository.schema('jsonschema'),
-  'repository/single.example.json': r.repository.example,
+  'repository/repository.schema.json': r.repository.schema('jsonschema'),
+  'repository/repository.example.json': r.repository.example,
 
-  'repository/create.schema.json': r.repositoryCreate.schema('jsonschema'),
+  'repository/repository.create.schema.json': r.repositoryCreate.schema('jsonschema'),
 
-  'repository/list.schema.json': r.repositoryList.schema('jsonschema'),
+  'repository/repository.list.schema.json': r.repositoryList.schema('jsonschema'),
 };
 
-local allFiles = namespaceFiles + projectFiles + repositoryFiles;
+local tagFiles = {
+  'tag/tag.example.json': t.tag.example,
+};
+
+local allFiles = namespaceFiles + projectFiles + repositoryFiles + tagFiles;
 
 allFiles

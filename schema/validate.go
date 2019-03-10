@@ -1,6 +1,8 @@
 package schema
 
 import (
+	"strings"
+
 	"github.com/xeipuuv/gojsonschema"
 )
 
@@ -23,56 +25,72 @@ func Validator() map[MediaType]*gojsonschema.Schema {
 
 }
 
+// schemaFS returns an http.FileSystem containing OPR jsonschemas
+var schemaFS = _escFS(false)
+
+func load(file, mediaType string) *gojsonschema.Schema {
+	parts := []string{"file:///", file}
+	path := strings.Join(parts, "")
+	loader := gojsonschema.NewReferenceLoaderFileSystem(path, schemaFS)
+	schema, err := gojsonschema.NewSchema(loader)
+	if err != nil {
+		panic(err)
+	}
+
+	schema.SetRootSchemaName(mediaType)
+	return schema
+}
+
 func namespaceValidator() *gojsonschema.Schema {
-	path := "namespace/single.schema.json"
+	path := "namespace/namespace.schema.json"
 	mediaType := string(MediaTypeNamespace)
 	return load(path, mediaType)
 }
 
 func namespaceCreateValidator() *gojsonschema.Schema {
-	path := "namespace/create.schema.json"
+	path := "namespace/namespace.create.schema.json"
 	mediaType := string(MediaTypeNamespaceCreate)
 	return load(path, mediaType)
 }
 
 func namespaceListValidator() *gojsonschema.Schema {
-	path := "namespace/list.schema.json"
+	path := "namespace/namespace.list.schema.json"
 	mediaType := string(MediaTypeNamespaceList)
 	return load(path, mediaType)
 }
 
-func repositoryValidator() *gojsonschema.Schema {
-	path := "repository/single.schema.json"
-	mediaType := string(MediaTypeRepository)
-	return load(path, mediaType)
-}
-
-func repositoryCreateValidator() *gojsonschema.Schema {
-	path := "repository/create.schema.json"
-	mediaType := string(MediaTypeRepositoryCreate)
-	return load(path, mediaType)
-}
-
-func repositoryListValidator() *gojsonschema.Schema {
-	path := "repository/list.schema.json"
-	mediaType := string(MediaTypeRepositoryList)
-	return load(path, mediaType)
-}
-
 func projectValidator() *gojsonschema.Schema {
-	path := "project/single.schema.json"
+	path := "project/project.schema.json"
 	mediaType := string(MediaTypeProject)
 	return load(path, mediaType)
 }
 
 func projectCreateValidator() *gojsonschema.Schema {
-	path := "project/create.schema.json"
+	path := "project/project.create.schema.json"
 	mediaType := string(MediaTypeProjectCreate)
 	return load(path, mediaType)
 }
 
 func projectListValidator() *gojsonschema.Schema {
-	path := "project/list.schema.json"
+	path := "project/project.list.schema.json"
 	mediaType := string(MediaTypeProjectList)
+	return load(path, mediaType)
+}
+
+func repositoryValidator() *gojsonschema.Schema {
+	path := "repository/repository.schema.json"
+	mediaType := string(MediaTypeRepository)
+	return load(path, mediaType)
+}
+
+func repositoryCreateValidator() *gojsonschema.Schema {
+	path := "repository/repository.create.schema.json"
+	mediaType := string(MediaTypeRepositoryCreate)
+	return load(path, mediaType)
+}
+
+func repositoryListValidator() *gojsonschema.Schema {
+	path := "repository/repository.list.schema.json"
+	mediaType := string(MediaTypeRepositoryList)
 	return load(path, mediaType)
 }
