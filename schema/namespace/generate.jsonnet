@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local golden = import 'golden.libsonnet';
-local ns = import 'namespace.libsonnet';
+local example = import 'examples.libsonnet';
+local schema = import 'schema.libsonnet';
 
 {
-  'namespace.schema.json': ns.namespace(),
-  'namespace.golden.json': golden.namespace,
+  'namespace.schema.json': schema.namespace(),
+  'namespace.example.json': example.namespace,
 
-  'create-namespace.schema.json': ns.createNamespace(),
-  'create-namespace.golden.json': golden.createNamespace,
+  'namespace.create.schema.json': schema.createNamespace(),
+  'namespace.create.example.json': example.createNamespace,
 
-  'list-namespaces.schema.json': ns.listNamespaces(),
-  'list-namespaces.golden.json': golden.listNamespaces,
+  'namespace.list.schema.json': schema.listNamespaces(),
+  'namespace.list.example.json': example.listNamespaces,
 }

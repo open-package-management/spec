@@ -45,7 +45,6 @@ local labels(output=jsonschema) = {
   },
 };
 
-
 local namespace(output=jsonschema) = {
   local quotas = {
     type: 'object',
