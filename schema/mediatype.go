@@ -19,7 +19,13 @@ const (
 	MediaTypeNamespaceCreate = "application/vnd.opm.namespace.create.v1+json"
 	MediaTypeNamespaceList   = "application/vnd.opm.namespace.list.v1+json"
 
-	MediaTypeProject    = "application/vnd.opm.project.v1+json"
-	MediaTypeRepository = "application/vnd.opm.repository.v1+json"
-	MediaTypeTag        = "application/vnd.opm.tag.v1+json"
+	MediaTypeProject       = "application/vnd.opm.project.v1+json"
+	MediaTypeProjectCreate = "application/vnd.opm.project.create.v1+json"
+	MediaTypeProjectList   = "application/vnd.opm.project.list.v1+json"
+
+	MediaTypeRepository       = "application/vnd.opm.repository.v1+json"
+	MediaTypeRepositoryCreate = "application/vnd.opm.repository.create.v1+json"
+	MediaTypeRepositoryList   = "application/vnd.opm.repository.list.v1+json"
+
+	MediaTypeTag = "application/vnd.opm.tag.v1+json"
 )
