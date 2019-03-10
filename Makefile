@@ -13,3 +13,7 @@ embed-schemas:
 .PHONY: openapi
 openapi:
 	jsonnet -o openapi/openapi.json openapi/openapi.libsonnet
+
+.PHONY: clean
+clean:
+	rm */**/*.json
