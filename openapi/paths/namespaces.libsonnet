@@ -12,8 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local example = import '../../schema/namespace/golden.libsonnet';
-local schema = import '../../schema/namespace/namespace.libsonnet';
+local schema = import '../../schema/namespace.libsonnet';
 local header = import '../headers.libsonnet';
 local params = import '../parameters.libsonnet';
 local resp = import '../responses.libsonnet';
@@ -33,8 +32,8 @@ local getNamespace = {
       description: 'OK',
       content: {
         [mediaType.namespace]: {
-          schema: schema.namespace('openapi'),
-          example: example.namespace,
+          schema: schema.namespace.schema('openapi'),
+          example: schema.namespace.example,
         },
       },
     },
@@ -50,8 +49,8 @@ local putNamespace = {
     required: true,
     content: {
       [mediaType.createNamespace]: {
-        schema: schema.createNamespace('openapi'),
-        example: example.createNamespace,
+        schema: schema.namespaceCreate.schema('openapi'),
+        example: schema.namespaceCreate.example,
       },
     },
   },
@@ -76,8 +75,8 @@ local listNamespaces = {
                + header.link,
       content: {
         [mediaType.listNamespaces]: {
-          schema: schema.listNamespaces('openapi'),
-          example: example.listNamespaces,
+          schema: schema.namespaceList.schema('openapi'),
+          example: schema.namespaceList.example,
         },
       },
     },

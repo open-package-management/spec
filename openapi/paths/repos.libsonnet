@@ -12,8 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local example = import '../../schema/namespace/golden.libsonnet';
-local schema = import '../../schema/repository/repository.libsonnet';
+local schema = import '../../schema/repository.libsonnet';
 local params = import '../parameters.libsonnet';
 local resp = import '../responses.libsonnet';
 
@@ -37,8 +36,8 @@ local getRepo = {
       description: 'OK',
       content: {
         [mediaType.repo]: {
-          schema: schema.repo('openapi'),
-          // example: example.namespace,
+          schema: schema.repository.schema('openapi'),
+          example: schema.repository.example,
         },
       },
     },
@@ -58,8 +57,8 @@ local putRepo = {
       description: 'OK',
       content: {
         [mediaType.createRepo]: {
-          schema: schema.createRepo('openapi'),
-          // example: example.namespace,
+          schema: schema.repositoryCreate.schema('openapi'),
+          example: schema.repositoryCreate.example,
         },
       },
     },
@@ -90,8 +89,8 @@ local listRepos = {
       description: 'OK',
       content: {
         [mediaType.listRepos]: {
-          schema: schema.listRepos('openapi'),
-          //          example: example.namespace,
+          schema: schema.repositoryList.schema('openapi'),
+          example: schema.repositoryList.example,
         },
       },
     },

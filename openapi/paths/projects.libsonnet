@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local schema = import '../../schema/project/project.libsonnet';
+local schema = import '../../schema/project.libsonnet';
 local params = import '../parameters.libsonnet';
 
 local mediaType = {
@@ -33,8 +33,8 @@ local getProject = {
       description: 'OK',
       content: {
         [mediaType.project]: {
-          schema: schema.project('openapi'),
-          //          example: example.namespace,
+          schema: schema.project.schema('openapi'),
+          example: schema.project.example,
         },
       },
     },
@@ -53,8 +53,8 @@ local putProject = {
       description: 'OK',
       content: {
         [mediaType.createProject]: {
-          schema: schema.createProject('openapi'),
-          //          example: example.namespace,
+          schema: schema.projectCreate.schema('openapi'),
+          example: schema.projectCreate,
         },
       },
     },
@@ -86,8 +86,8 @@ local listProjects = {
       description: 'OK',
       content: {
         [mediaType.listProjects]: {
-          schema: schema.listProjects('openapi'),
-          //          example: example.namespace,
+          schema: schema.projectList.schema('openapi'),
+          example: schema.projectList.example,
         },
       },
     },

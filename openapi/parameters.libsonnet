@@ -12,44 +12,47 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+local schema = import '../schema/common.libsonnet';
+local type = schema.types;
+
 local namespace = {
   name: 'namespace',
   'in': 'path',
   required: true,
-  schema: { type: 'string' },
+  schema: type.string,
 };
 
 local project = {
   name: 'project',
   'in': 'path',
   required: true,
-  schema: { type: 'string' },
+  schema: type.string,
 };
 
 local repo = {
   name: 'repo',
   'in': 'path',
   required: true,
-  schema: { type: 'string' },
+  schema: type.string,
 };
 
 local package = {
   name: 'package',
   'in': 'path',
   required: true,
-  schema: { type: 'string' },
+  schema: type.string,
 };
 
 local label = {
   name: 'label',
   'in': 'query',
-  schema: { type: 'string' },
+  schema: type.string,
 };
 
 local perPage = {
   name: 'perPage',
   'in': 'query',
-  schema: { type: 'string' },
+  schema: type.string,
 };
 
 {
