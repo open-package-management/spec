@@ -7,53 +7,6 @@
    "name": "repository-example-foo",
    "namespace": "namespace-example-foo",
    "package": {
-      "clients": {
-         "docker": {
-            "actions": {
-               "download": [
-                  "pull",
-                  "{package}:{tag}"
-               ],
-               "upload": [
-                  "push",
-                  "{package}:{tag}"
-               ]
-            },
-            "command": "docker"
-         },
-         "exampleCli": {
-            "actions": {
-               "download": [
-                  "download",
-                  "--image",
-                  "{package}",
-                  "--tag",
-                  "{tag}"
-               ],
-               "upload": [
-                  "upload",
-                  "--image",
-                  "{package}",
-                  "--tag",
-                  "{tag}"
-               ]
-            },
-            "command": "example-cli"
-         },
-         "skopeo": {
-            "actions": {
-               "download": [
-                  "pull",
-                  "{package}:{tag}"
-               ],
-               "upload": [
-                  "push",
-                  "{package}:{tag}"
-               ]
-            },
-            "command": "skopeo"
-         }
-      },
       "documentation": "https://github.com/opencontainers/image-spec",
       "icon": "https://opencontainers/static/icon-small.png",
       "type": "OCI Image"

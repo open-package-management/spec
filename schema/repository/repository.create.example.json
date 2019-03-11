@@ -1,0 +1,15 @@
+{
+   "labels": {
+      "consumer": {
+         "costCenter": "cs-foo",
+         "manager": "Tom Ripen",
+         "team": "team-foo"
+      },
+      "provider": {
+         "awsAccount": "aws-account-foo",
+         "pricingPlan": "PREMIUM",
+         "region": "us-east-1"
+      }
+   },
+   "type": "OCI Image"
+}

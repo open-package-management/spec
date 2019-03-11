@@ -32,6 +32,7 @@ local descriptor(output=jsonschema) = {
   },
 
   local digestSHA256 = {
+    additionalProperties: false,
     properties: {
       digest: {
         pattern: '^sha256:[A-Fa-f0-9]{64}$',
@@ -40,6 +41,7 @@ local descriptor(output=jsonschema) = {
   },
 
   local digestSHA512 = {
+    additionalProperties: false,
     properties: {
       digest: {
         pattern: '^sha512:[A-Fa-f0-9]{128}$',
@@ -61,6 +63,7 @@ local descriptor(output=jsonschema) = {
   },
 
   type: 'object',
+  additionalProperties: false,
   properties: {
     mediaType: mediaType,
     size: types.uint64,
@@ -82,18 +85,19 @@ local repositorySchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.repo,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
+  additionalProperties: false,
   properties: {
     name: { type: 'string' },
     namespace: { type: 'string' },
     project: { type: 'string' },
-    type: { type: 'string' },
-    tags: {
+    size: types.uint64,
+    package: {
       type: 'object',
-      [if output == jsonschema
-      then 'patternProperties'
-      else if output == openapi
-      then 'x-patternProperties']: {
-        '.{1,}': descriptor(output),
+      additionalProperties: false,
+      properties: {
+        type: { type: 'string' },
+        icon: { type: 'string' },
+        documentation: { type: 'string' },
       },
     },
     labels: types.mapStringString(output),
@@ -106,31 +110,8 @@ local repositoryExample = {
   project: 'project-example-foo',
   package: {
     type: 'OCI Image',
-    documentation: 'https://github.com/opencontainers/image-spec',
     icon: 'https://opencontainers/static/icon-small.png',
-    clients: {
-      exampleCli: {
-        command: 'example-cli',
-        actions: {
-          download: ['download', '--image', '{package}', '--tag', '{tag}'],
-          upload: ['upload', '--image', '{package}', '--tag', '{tag}'],
-        },
-      },
-      docker: {
-        command: 'docker',
-        actions: {
-          download: ['pull', '{package}:{tag}'],
-          upload: ['push', '{package}:{tag}'],
-        },
-      },
-      skopeo: {
-        command: 'skopeo',
-        actions: {
-          download: ['pull', '{package}:{tag}'],
-          upload: ['push', '{package}:{tag}'],
-        },
-      },
-    },
+    documentation: 'https://github.com/opencontainers/image-spec',
   },
 
   size: 34252334,
@@ -145,9 +126,26 @@ local repositoryCreateSchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.createRepo,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
+  additionalProperties: false,
   properties: {
     type: { type: 'string' },
-    labels: types.mapStringString(output),
+    labels: types.labels(output),
+  },
+};
+
+local repositoryCreateExample = {
+  type: 'OCI Image',
+  labels: {
+    provider: {
+      awsAccount: 'aws-account-foo',
+      pricingPlan: 'PREMIUM',
+      region: 'us-east-1',
+    },
+    consumer: {
+      team: 'team-foo',
+      manager: 'Tom Ripen',
+      costCenter: 'cs-foo',
+    },
   },
 };
 
@@ -155,12 +153,87 @@ local repositoryListSchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.listRepos,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
+  additionalProperties: false,
   properties: {
     repositories: {
+      name: { type: 'string' },
+      namespace: { type: 'string' },
+      project: { type: 'string' },
       type: 'array',
       items: repositorySchemaFunc(''),
     },
   },
+};
+
+local repositoryListExample = {
+  repositories: [
+    {
+      name: 'app-foo',
+      namespace: 'namespace-foo',
+      project: 'project-foo',
+      package: {
+        type: 'oci-image-v1.0.0',
+        icon: 'https://opencontainers/static/icon-small.png',
+        documentation: 'https://github.com/opencontainers/image-spec',
+      },
+      labels: {
+        provider: {
+          awsAccount: 'aws-account-foo',
+          pricingPlan: 'PREMIUM',
+          region: 'us-east-1',
+        },
+        consumer: {
+          team: 'team-foo',
+          manager: 'Tom Ripen',
+          costCenter: 'cs-foo',
+        },
+      },
+    },
+    {
+      name: 'app-bar',
+      namespace: 'namespace-foo',
+      project: 'project-foo',
+      package: {
+        type: 'docker-image-v2.2.0',
+        icon: 'https://docker.io/static/icon-small.png',
+        documentation: 'https://github.com/moby/moby/blob/master/image/spec/v1.2.md',
+      },
+      labels: {
+        provider: {
+          awsAccount: 'aws-account-foo',
+          pricingPlan: 'PREMIUM',
+          region: 'us-east-1',
+        },
+        consumer: {
+          team: 'team-bar',
+          manager: 'Tom Ripen',
+          costCenter: 'cs-foo',
+        },
+      },
+    },
+    {
+      name: 'app-foo-helm',
+      namespace: 'namespace-foo',
+      project: 'project-foo',
+      package: {
+        type: 'helm-chart-v1.0.0',
+        icon: 'https://helm.sh/static/icon-small.png',
+        documentation: 'https://helm.sh/docs',
+      },
+      labels: {
+        provider: {
+          awsAccount: 'aws-account-foo',
+          pricingPlan: 'PREMIUM',
+          region: 'us-east-1',
+        },
+        consumer: {
+          team: 'team-helm',
+          manager: 'Tom Ripen',
+          costCenter: 'cs-foo',
+        },
+      },
+    },
+  ],
 };
 
 {
@@ -170,8 +243,10 @@ local repositoryListSchemaFunc(output=jsonschema) = {
   },
   repositoryCreate:: {
     schema:: repositoryCreateSchemaFunc,
+    example:: repositoryCreateExample,
   },
   repositoryList:: {
     schema:: repositoryListSchemaFunc,
+    example:: repositoryListExample,
   },
 }

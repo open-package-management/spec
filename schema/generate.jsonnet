@@ -30,8 +30,10 @@ local repositoryFiles = {
   'repository/repository.single.example.json': r.repository.example,
 
   'repository/repository.create.schema.json': r.repositoryCreate.schema('jsonschema'),
+  'repository/repository.create.example.json': r.repositoryCreate.example,
 
   'repository/repository.list.schema.json': r.repositoryList.schema('jsonschema'),
+  'repository/repository.list.example.json': r.repositoryList.example,
 };
 
 local tagFiles = {

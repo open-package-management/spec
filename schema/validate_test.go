@@ -27,14 +27,16 @@ var projectTestTable = []testParams{
 }
 
 var repositoryTestTable = []testParams{
-	//	{"repository/repository.example.json", true, repository},
+	{"repository/repository.single.example.json", MediaTypeRepository, true},
+	{"repository/repository.create.example.json", MediaTypeRepositoryCreate, true},
+	{"repository/repository.list.example.json", MediaTypeRepositoryList, true},
 }
 
 func TestSchemas(t *testing.T) {
 	schemaTables := [][]testParams{
 		namespaceTestTable,
-		//		projectTestTable,
-		//		repositoryTestTable,
+		projectTestTable,
+		repositoryTestTable,
 	}
 
 	for _, tt := range schemaTables {

@@ -1,9 +1,11 @@
 {
    "$id": "https://openpackages.io/schema/repo-list",
    "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": false,
    "properties": {
       "repositories": {
          "items": {
+            "additionalProperties": false,
             "properties": {
                "labels": {
                   "type": "object"
@@ -14,17 +16,40 @@
                "namespace": {
                   "type": "string"
                },
+               "package": {
+                  "additionalProperties": false,
+                  "properties": {
+                     "documentation": {
+                        "type": "string"
+                     },
+                     "icon": {
+                        "type": "string"
+                     },
+                     "type": {
+                        "type": "string"
+                     }
+                  },
+                  "type": "object"
+               },
                "project": {
                   "type": "string"
                },
-               "tags": {
-                  "type": "object"
-               },
-               "type": {
-                  "type": "string"
+               "size": {
+                  "maximum": 18446744073709551616,
+                  "minimum": 0,
+                  "type": "integer"
                }
             },
             "type": "object"
+         },
+         "name": {
+            "type": "string"
+         },
+         "namespace": {
+            "type": "string"
+         },
+         "project": {
+            "type": "string"
          },
          "type": "array"
       }

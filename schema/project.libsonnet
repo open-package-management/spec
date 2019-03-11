@@ -28,6 +28,7 @@ local projectSchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.project,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
+  additionalProperties: false,
   properties: {
     name: { type: 'string' },
     namespace: { type: 'string' },
@@ -57,8 +58,9 @@ local projectCreateSchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.createProject,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
+  additionalProperties: false,
   properties: {
-    labels: types.mapStringString(output),
+    labels: types.labels(output),
   },
 };
 
@@ -81,6 +83,7 @@ local projectListSchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.listProjects,
   [if output == jsonschema then '$schema']: V7,
   type: 'object',
+  additionalProperties: false,
   properties: {
     projects: {
       type: 'array',

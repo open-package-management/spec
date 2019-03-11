@@ -1,0 +1,70 @@
+{
+   "repositories": [
+      {
+         "labels": {
+            "consumer": {
+               "costCenter": "cs-foo",
+               "manager": "Tom Ripen",
+               "team": "team-foo"
+            },
+            "provider": {
+               "awsAccount": "aws-account-foo",
+               "pricingPlan": "PREMIUM",
+               "region": "us-east-1"
+            }
+         },
+         "name": "app-foo",
+         "namespace": "namespace-foo",
+         "package": {
+            "documentation": "https://github.com/opencontainers/image-spec",
+            "icon": "https://opencontainers/static/icon-small.png",
+            "type": "oci-image-v1.0.0"
+         },
+         "project": "project-foo"
+      },
+      {
+         "labels": {
+            "consumer": {
+               "costCenter": "cs-foo",
+               "manager": "Tom Ripen",
+               "team": "team-bar"
+            },
+            "provider": {
+               "awsAccount": "aws-account-foo",
+               "pricingPlan": "PREMIUM",
+               "region": "us-east-1"
+            }
+         },
+         "name": "app-bar",
+         "namespace": "namespace-foo",
+         "package": {
+            "documentation": "https://github.com/moby/moby/blob/master/image/spec/v1.2.md",
+            "icon": "https://docker.io/static/icon-small.png",
+            "type": "docker-image-v2.2.0"
+         },
+         "project": "project-foo"
+      },
+      {
+         "labels": {
+            "consumer": {
+               "costCenter": "cs-foo",
+               "manager": "Tom Ripen",
+               "team": "team-helm"
+            },
+            "provider": {
+               "awsAccount": "aws-account-foo",
+               "pricingPlan": "PREMIUM",
+               "region": "us-east-1"
+            }
+         },
+         "name": "app-foo-helm",
+         "namespace": "namespace-foo",
+         "package": {
+            "documentation": "https://helm.sh/docs",
+            "icon": "https://helm.sh/static/icon-small.png",
+            "type": "helm-chart-v1.0.0"
+         },
+         "project": "project-foo"
+      }
+   ]
+}
