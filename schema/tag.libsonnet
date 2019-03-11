@@ -1,4 +1,5 @@
-local type = import 'types.libsonnet';
+local common = import 'common.libsonnet';
+local type = common.types;
 
 local jid = {
   tag:: 'https://openpackages.io/schema/tag',
@@ -6,7 +7,7 @@ local jid = {
   tagList:: 'https://openpackages.io/schema/tag-list',
 };
 
-local descriptor(output=type.jsonschema) = {
+local descriptor(output=common.jsonschema) = {
   local mediaType = {
     type: 'string',
     pattern: '^[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}/[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}$',
@@ -59,9 +60,9 @@ local descriptor(output=type.jsonschema) = {
   ],
 };
 
-local tagSchemaFunc(output=type.jsonschema) = {
-  [if output == type.jsonschema then '$id']: jid.tag,
-  [if output == type.jsonschema then '$schema']: type.jsonschemaV7,
+local tagSchemaFunc(output=common.jsonschema) = {
+  [if output == common.jsonschema then '$id']: jid.tag,
+  [if output == common.jsonschema then '$schema']: common.jsonschema,
   type: 'object',
   additionalProperties: false,
   properties: {
@@ -85,9 +86,9 @@ local tagExample = {
   },
 };
 
-local tagCreateSchemaFunc(output=type.jsonschema) = {
-  [if output == type.jsonschema then '$id']: jid.tagCreate,
-  [if output == type.jsonschema then '$schema']: type.jsonschemaV7,
+local tagCreateSchemaFunc(output=common.jsonschema) = {
+  [if output == common.jsonschema then '$id']: jid.tagCreate,
+  [if output == common.jsonschema then '$schema']: common.jsonschema,
   type: 'object',
   additionalProperties: false,
   properties: {
@@ -103,9 +104,9 @@ local tagCreateExample = {
   },
 };
 
-local tagListSchemaFunc(output=type.jsonschema) = {
-  [if output == type.jsonschema then '$id']: jid.tagList,
-  [if output == type.jsonschema then '$schema']: type.jsonschemaV7,
+local tagListSchemaFunc(output=common.jsonschema) = {
+  [if output == common.jsonschema then '$id']: jid.tagList,
+  [if output == common.jsonschema then '$schema']: common.jsonschema,
   type: 'object',
   additionalProperties: false,
   properties: {

@@ -12,11 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local types = import 'types.libsonnet';
-
-local openapi = 'openapi';
-local jsonschema = 'jsonschema';
-local V7 = 'http://json-schema.org/draft-07/schema#';
+local common = import 'common.libsonnet';
+local type = common.types;
 
 local jid = {
   repo: 'https://openpackages.io/schema/repo',
@@ -25,16 +22,16 @@ local jid = {
 };
 
 
-local repositorySchemaFunc(output=jsonschema) = {
-  [if output == jsonschema then '$id']: jid.repo,
-  [if output == jsonschema then '$schema']: V7,
+local repositorySchemaFunc(output=common.jsonschema) = {
+  [if output == common.jsonschema then '$id']: jid.repo,
+  [if output == common.jsonschema then '$schema']: common.jsonschema,
   type: 'object',
   additionalProperties: false,
   properties: {
     name: { type: 'string' },
     namespace: { type: 'string' },
     project: { type: 'string' },
-    size: types.uint64,
+    size: type.uint64,
     package: {
       type: 'object',
       additionalProperties: false,
@@ -44,7 +41,7 @@ local repositorySchemaFunc(output=jsonschema) = {
         documentation: { type: 'string' },
       },
     },
-    labels: types.mapStringString(output),
+    labels: type.mapStringString(output),
   },
 };
 
@@ -66,14 +63,14 @@ local repositoryExample = {
   },
 };
 
-local repositoryCreateSchemaFunc(output=jsonschema) = {
-  [if output == jsonschema then '$id']: jid.createRepo,
-  [if output == jsonschema then '$schema']: V7,
+local repositoryCreateSchemaFunc(output=common.jsonschema) = {
+  [if output == common.jsonschema then '$id']: jid.createRepo,
+  [if output == common.jsonschema then '$schema']: common.jsonschema,
   type: 'object',
   additionalProperties: false,
   properties: {
     type: { type: 'string' },
-    labels: types.labels(output),
+    labels: type.labels(output),
   },
 };
 
@@ -93,9 +90,9 @@ local repositoryCreateExample = {
   },
 };
 
-local repositoryListSchemaFunc(output=jsonschema) = {
-  [if output == jsonschema then '$id']: jid.listRepos,
-  [if output == jsonschema then '$schema']: V7,
+local repositoryListSchemaFunc(output=common.jsonschema) = {
+  [if output == common.jsonschema then '$id']: jid.listRepos,
+  [if output == common.jsonschema then '$schema']: common.jsonschema,
   type: 'object',
   additionalProperties: false,
   properties: {

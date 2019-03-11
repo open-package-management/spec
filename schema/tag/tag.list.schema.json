@@ -8,7 +8,6 @@
             "additionalProperties": false,
             "properties": {
                "manifest": {
-                  "additionalProperties": false,
                   "anyOf": [
                      {
                         "properties": {

@@ -12,11 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local types = import 'types.libsonnet';
-
-local openapi = 'openapi';
-local jsonschema = 'jsonschema';
-local V7 = 'http://json-schema.org/draft-07/schema#';
+local common = import 'common.libsonnet';
+local type = common.types;
 
 local jid = {
   namespace: 'https://openpackages.io/schema/namespace',
@@ -24,17 +21,17 @@ local jid = {
   listNamespaces: 'https://openpackages.io/schema/namespace-list',
 };
 
-local quotaDescriptor(output=jsonschema) = {
+local quotaDescriptor(output=common.jsonschema) = {
   type: 'object',
   additionalProperties: false,
   properties: {
-    limit: types.uint64,
-    used: types.uint64,
+    limit: type.uint64,
+    used: type.uint64,
   },
 };
 
 
-local namespaceSchemaFunc(output=jsonschema) = {
+local namespaceSchemaFunc(output=common.jsonschema) = {
   local quotas = {
     type: 'object',
     additionalProperties: false,
@@ -45,14 +42,14 @@ local namespaceSchemaFunc(output=jsonschema) = {
     },
   },
 
-  [if output == jsonschema then '$id']: jid.namespace,
-  [if output == jsonschema then '$schema']: V7,
+  [if output == common.jsonschema then '$id']: jid.namespace,
+  [if output == common.jsonschema then '$schema']: common.jsonschema,
   type: 'object',
   additionalProperties: false,
   properties: {
     name: { type: 'string' },
     quotas: quotas,
-    labels: types.labels(output),
+    labels: type.labels(output),
     status: {
       type: 'string',
       enum: ['active', 'terminating'],
@@ -91,16 +88,16 @@ local namespaceExample = {
   },
 };
 
-local namespaceCreateSchemaFunc(output=jsonschema) = {
-  [if output == jsonschema then '$id']: jid.createNamespace,
-  [if output == jsonschema then '$schema']: V7,
+local namespaceCreateSchemaFunc(output=common.jsonschema) = {
+  [if output == common.jsonschema then '$id']: jid.createNamespace,
+  [if output == common.jsonschema then '$schema']: common.jsonschema,
   title: 'Create Namespace',
   type: 'object',
   additionalProperties: false,
   properties: {
-    storageLimit: types.uint64,
-    repoLimit: types.uint64,
-    labels: types.mapStringString(output),
+    storageLimit: type.uint64,
+    repoLimit: type.uint64,
+    labels: type.mapStringString(output),
   },
 };
 
@@ -114,9 +111,9 @@ local namespaceCreateExample = {
   },
 };
 
-local namespaceListSchemaFunc(output=jsonschema) = {
-  [if output == jsonschema then '$id']: jid.listNamespaces,
-  [if output == jsonschema then '$schema']: V7,
+local namespaceListSchemaFunc(output=common.jsonschema) = {
+  [if output == common.jsonschema then '$id']: jid.listNamespaces,
+  [if output == common.jsonschema then '$schema']: common.jsonschema,
   title: 'List Namespaces',
   type: 'object',
   additionalProperties: false,

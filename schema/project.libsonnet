@@ -12,11 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local types = import 'types.libsonnet';
-
-local openapi = 'openapi';
-local jsonschema = 'jsonschema';
-local V7 = 'http://json-schema.org/draft-07/schema#';
+local common = import 'common.libsonnet';
+local type = common.types;
 
 local jid = {
   project: 'https://openpackages.io/schema/project',
@@ -24,16 +21,16 @@ local jid = {
   listProjects: 'https://openpackages.io/schema/project-list',
 };
 
-local projectSchemaFunc(output=jsonschema) = {
-  [if output == jsonschema then '$id']: jid.project,
-  [if output == jsonschema then '$schema']: V7,
+local projectSchemaFunc(output=common.jsonschema) = {
+  [if output == common.jsonschema then '$id']: jid.project,
+  [if output == common.jsonschema then '$schema']: common.jsonschema,
   type: 'object',
   additionalProperties: false,
   properties: {
     name: { type: 'string' },
     namespace: { type: 'string' },
-    repositories: types.uint64,
-    labels: types.labels(output),
+    repositories: type.uint64,
+    labels: type.labels(output),
   },
 };
 
@@ -54,13 +51,13 @@ local projectExample = {
   },
 };
 
-local projectCreateSchemaFunc(output=jsonschema) = {
-  [if output == jsonschema then '$id']: jid.createProject,
-  [if output == jsonschema then '$schema']: V7,
+local projectCreateSchemaFunc(output=common.jsonschema) = {
+  [if output == common.jsonschema then '$id']: jid.createProject,
+  [if output == common.jsonschema then '$schema']: common.jsonschema,
   type: 'object',
   additionalProperties: false,
   properties: {
-    labels: types.labels(output),
+    labels: type.labels(output),
   },
 };
 
@@ -79,9 +76,9 @@ local projectCreateExample = {
   },
 };
 
-local projectListSchemaFunc(output=jsonschema) = {
-  [if output == jsonschema then '$id']: jid.listProjects,
-  [if output == jsonschema then '$schema']: V7,
+local projectListSchemaFunc(output=common.jsonschema) = {
+  [if output == common.jsonschema then '$id']: jid.listProjects,
+  [if output == common.jsonschema then '$schema']: common.jsonschema,
   type: 'object',
   additionalProperties: false,
   properties: {
