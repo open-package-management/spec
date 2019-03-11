@@ -19,8 +19,10 @@ local projectFiles = {
   'project/project.single.example.json': p.project.example,
 
   'project/project.create.schema.json': p.projectCreate.schema('jsonschema'),
+  'project/project.create.example.json': p.projectCreate.example,
 
   'project/project.list.schema.json': p.projectList.schema('jsonschema'),
+  'project/project.list.example.json': p.projectList.example,
 };
 
 local repositoryFiles = {

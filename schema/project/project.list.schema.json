@@ -22,6 +22,11 @@
                },
                "namespace": {
                   "type": "string"
+               },
+               "repositories": {
+                  "maximum": 18446744073709551616,
+                  "minimum": 0,
+                  "type": "integer"
                }
             },
             "type": "object"

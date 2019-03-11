@@ -31,6 +31,7 @@ local projectSchemaFunc(output=jsonschema) = {
   properties: {
     name: { type: 'string' },
     namespace: { type: 'string' },
+    repositories: types.uint64,
     labels: types.labels(output),
   },
 };
@@ -61,27 +62,19 @@ local projectCreateSchemaFunc(output=jsonschema) = {
   },
 };
 
-local projectListExample = {
-  projects: [
-    {
-      name: 'project-foo',
-      repositories: 8,
-      labels: {
-        team: 'team-example-foo',
-        manager: 'Mary Foo',
-        costCenter: 'cs-foo',
-      },
+local projectCreateExample = {
+  labels: {
+    provider: {
+      awsAccount: 'aws-account-foo',
+      pricingPlan: 'PREMIUM',
+      region: 'us-east-1',
     },
-    {
-      name: 'project-bar',
-      repositories: 5,
-      labels: {
-        team: 'team-example-bar',
-        manager: 'Tom Bar',
-        costCenter: 'cs-bar',
-      },
+    consumer: {
+      team: 'team-foo',
+      manager: 'Tom Ripen',
+      costCenter: 'cs-foo',
     },
-  ],
+  },
 };
 
 local projectListSchemaFunc(output=jsonschema) = {
@@ -96,6 +89,45 @@ local projectListSchemaFunc(output=jsonschema) = {
   },
 };
 
+local projectListExample = {
+  projects: [
+    {
+      name: 'project-foo',
+      namespace: 'namespace-foo',
+      repositories: 8,
+      labels: {
+        provider: {
+          awsAccount: 'aws-account-foo',
+          pricingPlan: 'PREMIUM',
+          region: 'us-east-1',
+        },
+        consumer: {
+          team: 'team-foo',
+          manager: 'Tom Ripen',
+          costCenter: 'cs-foo',
+        },
+      },
+    },
+    {
+      name: 'project-bar',
+      namespace: 'namespace-foo',
+      repositories: 5,
+      labels: {
+        provider: {
+          awsAccount: 'aws-account-foo',
+          pricingPlan: 'PREMIUM',
+          region: 'us-east-1',
+        },
+        consumer: {
+          team: 'team-bar',
+          manager: 'Rose Dawson',
+          costCenter: 'cs-bar',
+        },
+      },
+    },
+  ],
+};
+
 {
   project:: {
     schema:: projectSchemaFunc,
@@ -103,8 +135,10 @@ local projectListSchemaFunc(output=jsonschema) = {
   },
   projectCreate:: {
     schema:: projectCreateSchemaFunc,
+    example:: projectCreateExample,
   },
   projectList:: {
     schema:: projectListSchemaFunc,
+    example:: projectListExample,
   },
 }

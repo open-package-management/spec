@@ -22,8 +22,8 @@ var namespaceTestTable = []testParams{
 
 var projectTestTable = []testParams{
 	{"project/project.single.example.json", MediaTypeProject, true},
-	//	{"project/project.create.example.json", true, projectCreate},
-	//	{"project/project.list.example.json", true, projectList},
+	{"project/project.create.example.json", MediaTypeProjectCreate, true},
+	{"project/project.list.example.json", MediaTypeProjectList, true},
 }
 
 var repositoryTestTable = []testParams{
