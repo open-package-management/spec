@@ -21,53 +21,13 @@ The design philosophy is one based on real world applications. Instead of design
 We will start by describing the actual components, since this maps to a set of ideas that are likely well known.
 A specific registry is not required to include all of these components, as long as it meets the desired goals stated above. After we describe these components, we will discuss the design ideas behind them. A registry consists of (one or more) of the following components:
 
-### Object Storage
+### Tags
 
-The object storage component can be a file system or blob storage. It typically allows for push and pull
-of content, with optional specification of permissions to do so. Examples of object storage include:
-
- - a local or remote filesystem
- - Google Storage
- - Amazon S3
-
-### Registry Interface
-
-The registry must provide an interface for humans and/or machines to browse its content, depending on its intended user audience. This might include an interactive web interface, and/or a programmatic API to serve content manifests. Examples of interfaces include:
-
- - static Github pages or other site renderers
- - dynamic APIs served via Cloud Functions, or AWS Lambda (or similar)
- - Other dynamic APIs from a Server
-
-
-### Version Control
-
-The registry version control of metadata is typically driven by git. This is where build recipes, and their versions over time, are maintained. Depending on the implementation, the version control might sit alongside the interface (in the case of a repository that serves both recipes and web content).
-
-
-### Builders
-
-The registry builder is the component that generates or (more generally) moves around content. Registry builders can range from entire instances to continuous integration pipelines. For example:
-
- - Google Cloud Builder
- - CircleCI, TravisCI, or other CI services
- - Github Actions
-
-Specifically, it's the job of the builder to generate content and metadata, and move it to the Registry Storage.
-A builder can be a single build service, or a more creative combination of using a CI service, remote builder, and even webhooks.
-
-
-## Registry Definitions
-
-The following definitions serve as abstractions for the above applied components.
-
-### Packages
-
-A package is a tagged collection of content-addressable blobs that
-could be anything from a single OCI image to a Helm package.
+A tag is a reference to a content-addressable blob that serves as an entrypoint to anything from a single OCI image to a Helm chart.
 
 ### Repositories
 
-A repository is a logical collection of packages that
+A repository is a logical collection of tags that
 contain different versions/tags of the same content type.
 For example, an application "Foo" would use a repository to
 publish different image versions:
