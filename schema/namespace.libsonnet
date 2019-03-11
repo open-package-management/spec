@@ -33,14 +33,6 @@ local quotaDescriptor(output=jsonschema) = {
   },
 };
 
-local labels(output=jsonschema) = {
-  type: 'object',
-  additionalProperties: false,
-  properties: {
-    provider: types.mapStringString(output),
-    consumer: types.mapStringString(output),
-  },
-};
 
 local namespaceSchemaFunc(output=jsonschema) = {
   local quotas = {
@@ -60,7 +52,7 @@ local namespaceSchemaFunc(output=jsonschema) = {
   properties: {
     name: { type: 'string' },
     quotas: quotas,
-    labels: labels(output),
+    labels: types.labels(output),
     status: {
       type: 'string',
       enum: ['active', 'terminating'],

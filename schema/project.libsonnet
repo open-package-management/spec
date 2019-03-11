@@ -54,6 +54,29 @@ local projectCreateSchemaFunc(output=jsonschema) = {
   },
 };
 
+local projectListExample = {
+  projects: [
+    {
+      name: 'project-foo',
+      repositories: 8,
+      labels: {
+        team: 'team-example-foo',
+        manager: 'Mary Foo',
+        costCenter: 'cs-foo',
+      },
+    },
+    {
+      name: 'project-bar',
+      repositories: 5,
+      labels: {
+        team: 'team-example-bar',
+        manager: 'Tom Bar',
+        costCenter: 'cs-bar',
+      },
+    },
+  ],
+};
+
 local projectListSchemaFunc(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.listProjects,
   [if output == jsonschema then '$schema']: V7,

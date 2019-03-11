@@ -46,7 +46,17 @@ local mapStringObject(output=jsonschema) = {
   },
 };
 
+local labels(output=jsonschema) = {
+  type: 'object',
+  additionalProperties: false,
+  properties: {
+    provider: mapStringString(output),
+    consumer: mapStringString(output),
+  },
+};
+
 {
   uint64:: uint64,
   mapStringString:: mapStringString,
+  labels:: labels,
 }
