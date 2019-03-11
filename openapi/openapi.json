@@ -467,401 +467,6 @@
             ]
          }
       },
-      "/namespaces/{namespace}/project/{project}/repos": {
-         "get": {
-            "operationId": "listRepos",
-            "parameters": [
-               {
-                  "in": "path",
-                  "name": "namespace",
-                  "required": true,
-                  "schema": {
-                     "type": "string"
-                  }
-               },
-               {
-                  "in": "path",
-                  "name": "project",
-                  "required": true,
-                  "schema": {
-                     "type": "string"
-                  }
-               },
-               {
-                  "in": "path",
-                  "name": "repo",
-                  "required": true,
-                  "schema": {
-                     "type": "string"
-                  }
-               }
-            ],
-            "responses": {
-               "200": {
-                  "content": {
-                     "application/vnd.open-package-management.repository-list.v1+json": {
-                        "example": {
-                           "repositories": [
-                              {
-                                 "labels": {
-                                    "consumer": {
-                                       "costCenter": "cs-foo",
-                                       "manager": "Tom Ripen",
-                                       "team": "team-foo"
-                                    },
-                                    "provider": {
-                                       "awsAccount": "aws-account-foo",
-                                       "pricingPlan": "PREMIUM",
-                                       "region": "us-east-1"
-                                    }
-                                 },
-                                 "name": "app-foo",
-                                 "namespace": "namespace-foo",
-                                 "package": {
-                                    "documentation": "https://github.com/opencontainers/image-spec",
-                                    "icon": "https://opencontainers/static/icon-small.png",
-                                    "type": "oci-image-v1.0.0"
-                                 },
-                                 "project": "project-foo"
-                              },
-                              {
-                                 "labels": {
-                                    "consumer": {
-                                       "costCenter": "cs-foo",
-                                       "manager": "Tom Ripen",
-                                       "team": "team-bar"
-                                    },
-                                    "provider": {
-                                       "awsAccount": "aws-account-foo",
-                                       "pricingPlan": "PREMIUM",
-                                       "region": "us-east-1"
-                                    }
-                                 },
-                                 "name": "app-bar",
-                                 "namespace": "namespace-foo",
-                                 "package": {
-                                    "documentation": "https://github.com/moby/moby/blob/master/image/spec/v1.2.md",
-                                    "icon": "https://docker.io/static/icon-small.png",
-                                    "type": "docker-image-v2.2.0"
-                                 },
-                                 "project": "project-foo"
-                              },
-                              {
-                                 "labels": {
-                                    "consumer": {
-                                       "costCenter": "cs-foo",
-                                       "manager": "Tom Ripen",
-                                       "team": "team-helm"
-                                    },
-                                    "provider": {
-                                       "awsAccount": "aws-account-foo",
-                                       "pricingPlan": "PREMIUM",
-                                       "region": "us-east-1"
-                                    }
-                                 },
-                                 "name": "app-foo-helm",
-                                 "namespace": "namespace-foo",
-                                 "package": {
-                                    "documentation": "https://helm.sh/docs",
-                                    "icon": "https://helm.sh/static/icon-small.png",
-                                    "type": "helm-chart-v1.0.0"
-                                 },
-                                 "project": "project-foo"
-                              }
-                           ]
-                        },
-                        "schema": {
-                           "additionalProperties": false,
-                           "properties": {
-                              "repositories": {
-                                 "items": {
-                                    "additionalProperties": false,
-                                    "properties": {
-                                       "labels": {
-                                          "type": "object"
-                                       },
-                                       "name": {
-                                          "type": "string"
-                                       },
-                                       "namespace": {
-                                          "type": "string"
-                                       },
-                                       "package": {
-                                          "additionalProperties": false,
-                                          "properties": {
-                                             "documentation": {
-                                                "type": "string"
-                                             },
-                                             "icon": {
-                                                "type": "string"
-                                             },
-                                             "type": {
-                                                "type": "string"
-                                             }
-                                          },
-                                          "type": "object"
-                                       },
-                                       "project": {
-                                          "type": "string"
-                                       },
-                                       "size": {
-                                          "maximum": 18446744073709551616,
-                                          "minimum": 0,
-                                          "type": "integer"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "OK"
-               }
-            },
-            "tags": [
-               "repos"
-            ]
-         }
-      },
-      "/namespaces/{namespace}/project/{project}/repos/{repo}": {
-         "delete": {
-            "operationId": "deleteRepo",
-            "parameters": [
-               {
-                  "in": "path",
-                  "name": "namespace",
-                  "required": true,
-                  "schema": {
-                     "type": "string"
-                  }
-               },
-               {
-                  "in": "path",
-                  "name": "project",
-                  "required": true,
-                  "schema": {
-                     "type": "string"
-                  }
-               },
-               {
-                  "in": "path",
-                  "name": "repo",
-                  "required": true,
-                  "schema": {
-                     "type": "string"
-                  }
-               }
-            ],
-            "responses": {
-               "200": {
-                  "description": "OK"
-               },
-               "400": {
-                  "description": "Bad Request"
-               },
-               "401": {
-                  "description": "Unauthorized"
-               },
-               "403": {
-                  "description": "Forbidden"
-               }
-            },
-            "tags": [
-               "repos"
-            ]
-         },
-         "get": {
-            "operationId": "getRepo",
-            "parameters": [
-               {
-                  "in": "path",
-                  "name": "namespace",
-                  "required": true,
-                  "schema": {
-                     "type": "string"
-                  }
-               },
-               {
-                  "in": "path",
-                  "name": "project",
-                  "required": true,
-                  "schema": {
-                     "type": "string"
-                  }
-               },
-               {
-                  "in": "path",
-                  "name": "repo",
-                  "required": true,
-                  "schema": {
-                     "type": "string"
-                  }
-               }
-            ],
-            "responses": {
-               "200": {
-                  "content": {
-                     "application/vnd.open-package-management.repository.v1+json": {
-                        "example": {
-                           "labels": {
-                              "costCenter": "cs-foo",
-                              "maintainer": "Billy Seiken",
-                              "team": "team-example"
-                           },
-                           "name": "repository-example-foo",
-                           "namespace": "namespace-example-foo",
-                           "package": {
-                              "documentation": "https://github.com/opencontainers/image-spec",
-                              "icon": "https://opencontainers/static/icon-small.png",
-                              "type": "OCI Image"
-                           },
-                           "project": "project-example-foo",
-                           "size": 34252334
-                        },
-                        "schema": {
-                           "additionalProperties": false,
-                           "properties": {
-                              "labels": {
-                                 "type": "object",
-                                 "x-patternProperties": {
-                                    ".{1,}": {
-                                       "type": "string"
-                                    }
-                                 }
-                              },
-                              "name": {
-                                 "type": "string"
-                              },
-                              "namespace": {
-                                 "type": "string"
-                              },
-                              "package": {
-                                 "additionalProperties": false,
-                                 "properties": {
-                                    "documentation": {
-                                       "type": "string"
-                                    },
-                                    "icon": {
-                                       "type": "string"
-                                    },
-                                    "type": {
-                                       "type": "string"
-                                    }
-                                 },
-                                 "type": "object"
-                              },
-                              "project": {
-                                 "type": "string"
-                              },
-                              "size": {
-                                 "maximum": 18446744073709551616,
-                                 "minimum": 0,
-                                 "type": "integer"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "OK"
-               }
-            },
-            "tags": [
-               "repos"
-            ]
-         },
-         "put": {
-            "operationId": "putRepo",
-            "parameters": [
-               {
-                  "in": "path",
-                  "name": "namespace",
-                  "required": true,
-                  "schema": {
-                     "type": "string"
-                  }
-               },
-               {
-                  "in": "path",
-                  "name": "project",
-                  "required": true,
-                  "schema": {
-                     "type": "string"
-                  }
-               },
-               {
-                  "in": "path",
-                  "name": "repo",
-                  "required": true,
-                  "schema": {
-                     "type": "string"
-                  }
-               }
-            ],
-            "responses": {
-               "200": {
-                  "content": {
-                     "application/vnd.open-package-management.repository-create.v1+json": {
-                        "example": {
-                           "labels": {
-                              "consumer": {
-                                 "costCenter": "cs-foo",
-                                 "manager": "Tom Ripen",
-                                 "team": "team-foo"
-                              },
-                              "provider": {
-                                 "awsAccount": "aws-account-foo",
-                                 "pricingPlan": "PREMIUM",
-                                 "region": "us-east-1"
-                              }
-                           },
-                           "type": "OCI Image"
-                        },
-                        "schema": {
-                           "additionalProperties": false,
-                           "properties": {
-                              "labels": {
-                                 "additionalProperties": false,
-                                 "properties": {
-                                    "consumer": {
-                                       "type": "object",
-                                       "x-patternProperties": {
-                                          ".{1,}": {
-                                             "type": "string"
-                                          }
-                                       }
-                                    },
-                                    "provider": {
-                                       "type": "object",
-                                       "x-patternProperties": {
-                                          ".{1,}": {
-                                             "type": "string"
-                                          }
-                                       }
-                                    }
-                                 },
-                                 "type": "object"
-                              },
-                              "type": {
-                                 "type": "string"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "OK"
-               }
-            },
-            "tags": [
-               "repos"
-            ]
-         }
-      },
       "/namespaces/{namespace}/projects": {
          "get": {
             "operationId": "listProjects",
@@ -1143,6 +748,833 @@
             },
             "tags": [
                "projects"
+            ]
+         }
+      },
+      "/namespaces/{namespace}/projects/{project}/repositories": {
+         "get": {
+            "operationId": "repositoryList",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "project",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "repository",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/vnd.open-package-management.repository-list.v1+json": {
+                        "example": {
+                           "repositories": [
+                              {
+                                 "labels": {
+                                    "consumer": {
+                                       "costCenter": "cs-foo",
+                                       "manager": "Tom Ripen",
+                                       "team": "team-foo"
+                                    },
+                                    "provider": {
+                                       "awsAccount": "aws-account-foo",
+                                       "pricingPlan": "PREMIUM",
+                                       "region": "us-east-1"
+                                    }
+                                 },
+                                 "name": "app-foo",
+                                 "namespace": "namespace-foo",
+                                 "package": {
+                                    "documentation": "https://github.com/opencontainers/image-spec",
+                                    "icon": "https://opencontainers/static/icon-small.png",
+                                    "type": "oci-image-v1.0.0"
+                                 },
+                                 "project": "project-foo"
+                              },
+                              {
+                                 "labels": {
+                                    "consumer": {
+                                       "costCenter": "cs-foo",
+                                       "manager": "Tom Ripen",
+                                       "team": "team-bar"
+                                    },
+                                    "provider": {
+                                       "awsAccount": "aws-account-foo",
+                                       "pricingPlan": "PREMIUM",
+                                       "region": "us-east-1"
+                                    }
+                                 },
+                                 "name": "app-bar",
+                                 "namespace": "namespace-foo",
+                                 "package": {
+                                    "documentation": "https://github.com/moby/moby/blob/master/image/spec/v1.2.md",
+                                    "icon": "https://docker.io/static/icon-small.png",
+                                    "type": "docker-image-v2.2.0"
+                                 },
+                                 "project": "project-foo"
+                              },
+                              {
+                                 "labels": {
+                                    "consumer": {
+                                       "costCenter": "cs-foo",
+                                       "manager": "Tom Ripen",
+                                       "team": "team-helm"
+                                    },
+                                    "provider": {
+                                       "awsAccount": "aws-account-foo",
+                                       "pricingPlan": "PREMIUM",
+                                       "region": "us-east-1"
+                                    }
+                                 },
+                                 "name": "app-foo-helm",
+                                 "namespace": "namespace-foo",
+                                 "package": {
+                                    "documentation": "https://helm.sh/docs",
+                                    "icon": "https://helm.sh/static/icon-small.png",
+                                    "type": "helm-chart-v1.0.0"
+                                 },
+                                 "project": "project-foo"
+                              }
+                           ]
+                        },
+                        "schema": {
+                           "additionalProperties": false,
+                           "properties": {
+                              "repositories": {
+                                 "items": {
+                                    "additionalProperties": false,
+                                    "properties": {
+                                       "labels": {
+                                          "type": "object"
+                                       },
+                                       "name": {
+                                          "type": "string"
+                                       },
+                                       "namespace": {
+                                          "type": "string"
+                                       },
+                                       "package": {
+                                          "additionalProperties": false,
+                                          "properties": {
+                                             "documentation": {
+                                                "type": "string"
+                                             },
+                                             "icon": {
+                                                "type": "string"
+                                             },
+                                             "type": {
+                                                "type": "string"
+                                             }
+                                          },
+                                          "type": "object"
+                                       },
+                                       "project": {
+                                          "type": "string"
+                                       },
+                                       "size": {
+                                          "maximum": 18446744073709551616,
+                                          "minimum": 0,
+                                          "type": "integer"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "OK"
+               }
+            },
+            "tags": [
+               "repositories"
+            ]
+         }
+      },
+      "/namespaces/{namespace}/projects/{project}/repositories/{repository}": {
+         "delete": {
+            "operationId": "repositoryDelete",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "project",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "repository",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "400": {
+                  "description": "Bad Request"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Forbidden"
+               }
+            },
+            "tags": [
+               "repositories"
+            ]
+         },
+         "get": {
+            "operationId": "repositoryGet",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "project",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "repository",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/vnd.open-package-management.repository.v1+json": {
+                        "example": {
+                           "labels": {
+                              "costCenter": "cs-foo",
+                              "maintainer": "Billy Seiken",
+                              "team": "team-example"
+                           },
+                           "name": "repository-example-foo",
+                           "namespace": "namespace-example-foo",
+                           "package": {
+                              "documentation": "https://github.com/opencontainers/image-spec",
+                              "icon": "https://opencontainers/static/icon-small.png",
+                              "type": "OCI Image"
+                           },
+                           "project": "project-example-foo",
+                           "size": 34252334
+                        },
+                        "schema": {
+                           "additionalProperties": false,
+                           "properties": {
+                              "labels": {
+                                 "type": "object",
+                                 "x-patternProperties": {
+                                    ".{1,}": {
+                                       "type": "string"
+                                    }
+                                 }
+                              },
+                              "name": {
+                                 "type": "string"
+                              },
+                              "namespace": {
+                                 "type": "string"
+                              },
+                              "package": {
+                                 "additionalProperties": false,
+                                 "properties": {
+                                    "documentation": {
+                                       "type": "string"
+                                    },
+                                    "icon": {
+                                       "type": "string"
+                                    },
+                                    "type": {
+                                       "type": "string"
+                                    }
+                                 },
+                                 "type": "object"
+                              },
+                              "project": {
+                                 "type": "string"
+                              },
+                              "size": {
+                                 "maximum": 18446744073709551616,
+                                 "minimum": 0,
+                                 "type": "integer"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "OK"
+               }
+            },
+            "tags": [
+               "repositories"
+            ]
+         },
+         "put": {
+            "operationId": "repositoryCreate",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "project",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "repository",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/vnd.open-package-management.repository-create.v1+json": {
+                        "example": {
+                           "labels": {
+                              "consumer": {
+                                 "costCenter": "cs-foo",
+                                 "manager": "Tom Ripen",
+                                 "team": "team-foo"
+                              },
+                              "provider": {
+                                 "awsAccount": "aws-account-foo",
+                                 "pricingPlan": "PREMIUM",
+                                 "region": "us-east-1"
+                              }
+                           },
+                           "type": "OCI Image"
+                        },
+                        "schema": {
+                           "additionalProperties": false,
+                           "properties": {
+                              "labels": {
+                                 "additionalProperties": false,
+                                 "properties": {
+                                    "consumer": {
+                                       "type": "object",
+                                       "x-patternProperties": {
+                                          ".{1,}": {
+                                             "type": "string"
+                                          }
+                                       }
+                                    },
+                                    "provider": {
+                                       "type": "object",
+                                       "x-patternProperties": {
+                                          ".{1,}": {
+                                             "type": "string"
+                                          }
+                                       }
+                                    }
+                                 },
+                                 "type": "object"
+                              },
+                              "type": {
+                                 "type": "string"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "OK"
+               }
+            },
+            "tags": [
+               "repositories"
+            ]
+         }
+      },
+      "/namespaces/{namespace}/projects/{project}/repositories/{repository}/tags": {
+         "get": {
+            "operationId": "tagList",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "project",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "repository",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/vnd.open-package-management.tag.create.v1+json": {
+                        "example": {
+                           "tags": [
+                              {
+                                 "manifest": {
+                                    "digest": "sha256:10b995d6204131069af3e4f00dc1d3758d517a5edb29e5757d3c2858d5613127",
+                                    "mediaType": "application/vnd.oci.image.manifest.v1+json",
+                                    "size": 435
+                                 },
+                                 "name": "v1.0.0",
+                                 "namespace": "namespace-foo",
+                                 "project": "project-foo",
+                                 "repository": "app-foo"
+                              },
+                              {
+                                 "manifest": {
+                                    "digest": "sha256:c12ae6761950c2b151c8274451375781de87aa70a9ccfa6eddd074001c88cf04",
+                                    "mediaType": "application/vnd.oci.image.manifest.v1+json",
+                                    "size": 582
+                                 },
+                                 "name": "v2.0.0",
+                                 "namespace": "namespace-foo",
+                                 "project": "project-foo",
+                                 "repository": "app-foo"
+                              },
+                              {
+                                 "manifest": {
+                                    "digest": "sha256:fe495acf3d7e84c6370a1b25a2624c4e09184f293a91fdff5915478f2f3bc8a8",
+                                    "mediaType": "application/vnd.oci.image.manifest.v1+json",
+                                    "size": 748
+                                 },
+                                 "name": "v3.0.0",
+                                 "namespace": "namespace-foo",
+                                 "project": "project-foo",
+                                 "repository": "app-foo"
+                              }
+                           ]
+                        },
+                        "schema": {
+                           "additionalProperties": false,
+                           "properties": {
+                              "tags": {
+                                 "items": {
+                                    "additionalProperties": false,
+                                    "properties": {
+                                       "manifest": {
+                                          "anyOf": [
+                                             {
+                                                "properties": {
+                                                   "digest": {
+                                                      "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+                                                   }
+                                                }
+                                             },
+                                             {
+                                                "properties": {
+                                                   "digest": {
+                                                      "pattern": "^sha512:[A-Fa-f0-9]{128}$"
+                                                   }
+                                                }
+                                             }
+                                          ],
+                                          "properties": {
+                                             "digest": {
+                                                "pattern": "^[a-z0-9]+(?:[+._-][a-z0-9]+)*:[a-zA-Z0-9=_-]+$",
+                                                "type": "string"
+                                             },
+                                             "mediaType": {
+                                                "pattern": "^[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}/[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}$",
+                                                "type": "string"
+                                             },
+                                             "size": {
+                                                "maximum": 18446744073709551616,
+                                                "minimum": 0,
+                                                "type": "integer"
+                                             },
+                                             "urls": {
+                                                "items": {
+                                                   "format": "uri",
+                                                   "type": "string"
+                                                },
+                                                "type": "array"
+                                             }
+                                          },
+                                          "required": [
+                                             "size",
+                                             "mediaType",
+                                             "digest"
+                                          ],
+                                          "type": "object"
+                                       },
+                                       "name": {
+                                          "type": "string"
+                                       },
+                                       "namespace": {
+                                          "type": "string"
+                                       },
+                                       "project": {
+                                          "type": "string"
+                                       },
+                                       "repository": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "OK"
+               }
+            },
+            "tags": [
+               "tags"
+            ]
+         }
+      },
+      "/namespaces/{namespace}/projects/{project}/repositories/{repository}/tags/{tag}": {
+         "delete": {
+            "operationId": "tagDelete",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "project",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "repository",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "tag",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK"
+               }
+            },
+            "tags": [
+               "tags"
+            ]
+         },
+         "get": {
+            "operationId": "tagGet",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "project",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "repository",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "tag",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/vnd.open-package-management.tag.v1+json": {
+                        "example": {
+                           "manifest": {
+                              "digest": "sha256:10b995d6204131069af3e4f00dc1d3758d517a5edb29e5757d3c2858d5613127",
+                              "mediaType": "application/vnd.oci.image.manifest.v1+json",
+                              "size": 435
+                           },
+                           "name": "v1.0.1",
+                           "namespace": "namespace-foo",
+                           "project": "project-foo",
+                           "repository": "app-foo"
+                        },
+                        "schema": {
+                           "additionalProperties": false,
+                           "properties": {
+                              "manifest": {
+                                 "anyOf": [
+                                    {
+                                       "properties": {
+                                          "digest": {
+                                             "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+                                          }
+                                       }
+                                    },
+                                    {
+                                       "properties": {
+                                          "digest": {
+                                             "pattern": "^sha512:[A-Fa-f0-9]{128}$"
+                                          }
+                                       }
+                                    }
+                                 ],
+                                 "properties": {
+                                    "digest": {
+                                       "pattern": "^[a-z0-9]+(?:[+._-][a-z0-9]+)*:[a-zA-Z0-9=_-]+$",
+                                       "type": "string"
+                                    },
+                                    "mediaType": {
+                                       "pattern": "^[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}/[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}$",
+                                       "type": "string"
+                                    },
+                                    "size": {
+                                       "maximum": 18446744073709551616,
+                                       "minimum": 0,
+                                       "type": "integer"
+                                    },
+                                    "urls": {
+                                       "items": {
+                                          "format": "uri",
+                                          "type": "string"
+                                       },
+                                       "type": "array"
+                                    }
+                                 },
+                                 "required": [
+                                    "size",
+                                    "mediaType",
+                                    "digest"
+                                 ],
+                                 "type": "object"
+                              },
+                              "name": {
+                                 "type": "string"
+                              },
+                              "namespace": {
+                                 "type": "string"
+                              },
+                              "project": {
+                                 "type": "string"
+                              },
+                              "repository": {
+                                 "type": "string"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "OK"
+               }
+            },
+            "tags": [
+               "tags"
+            ]
+         },
+         "put": {
+            "operationId": "tagPut",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "project",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "repository",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "tag",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/vnd.open-package-management.tag.create.v1+json": {
+                        "example": {
+                           "manifest": {
+                              "digest": "sha256:10b995d6204131069af3e4f00dc1d3758d517a5edb29e5757d3c2858d5613127",
+                              "mediaType": "application/vnd.oci.image.manifest.v1+json",
+                              "size": 435
+                           }
+                        },
+                        "schema": {
+                           "additionalProperties": false,
+                           "properties": {
+                              "manifest": {
+                                 "anyOf": [
+                                    {
+                                       "properties": {
+                                          "digest": {
+                                             "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+                                          }
+                                       }
+                                    },
+                                    {
+                                       "properties": {
+                                          "digest": {
+                                             "pattern": "^sha512:[A-Fa-f0-9]{128}$"
+                                          }
+                                       }
+                                    }
+                                 ],
+                                 "properties": {
+                                    "digest": {
+                                       "pattern": "^[a-z0-9]+(?:[+._-][a-z0-9]+)*:[a-zA-Z0-9=_-]+$",
+                                       "type": "string"
+                                    },
+                                    "mediaType": {
+                                       "pattern": "^[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}/[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}$",
+                                       "type": "string"
+                                    },
+                                    "size": {
+                                       "maximum": 18446744073709551616,
+                                       "minimum": 0,
+                                       "type": "integer"
+                                    },
+                                    "urls": {
+                                       "items": {
+                                          "format": "uri",
+                                          "type": "string"
+                                       },
+                                       "type": "array"
+                                    }
+                                 },
+                                 "required": [
+                                    "size",
+                                    "mediaType",
+                                    "digest"
+                                 ],
+                                 "type": "object"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "OK"
+               }
+            },
+            "tags": [
+               "tags"
             ]
          }
       }

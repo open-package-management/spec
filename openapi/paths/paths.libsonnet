@@ -15,7 +15,8 @@
 local namespaces = import 'namespaces.libsonnet';
 local projects = import 'projects.libsonnet';
 local repos = import 'repos.libsonnet';
+local tags = import 'tags.libsonnet';
 
-local paths = namespaces + projects + repos;
+local paths = namespaces + projects + repos + tags;
 
 paths

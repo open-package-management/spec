@@ -24,12 +24,12 @@ local mediaType = {
 };
 
 local getRepo = {
-  tags: ['repos'],
-  operationId: 'getRepo',
+  tags: ['repositories'],
+  operationId: 'repositoryGet',
   parameters: [
     params.namespace,
     params.project,
-    params.repo,
+    params.repository,
   ],
   responses: {
     '200': {
@@ -45,12 +45,12 @@ local getRepo = {
 };
 
 local putRepo = {
-  tags: ['repos'],
-  operationId: 'putRepo',
+  tags: ['repositories'],
+  operationId: 'repositoryCreate',
   parameters: [
     params.namespace,
     params.project,
-    params.repo,
+    params.repository,
   ],
   responses: {
     '200': {
@@ -66,23 +66,23 @@ local putRepo = {
 };
 
 local deleteRepo = {
-  tags: ['repos'],
-  operationId: 'deleteRepo',
+  tags: ['repositories'],
+  operationId: 'repositoryDelete',
   parameters: [
     params.namespace,
     params.project,
-    params.repo,
+    params.repository,
   ],
   responses: resp.baseResponses,
 };
 
 local listRepos = {
-  tags: ['repos'],
-  operationId: 'listRepos',
+  tags: ['repositories'],
+  operationId: 'repositoryList',
   parameters: [
     params.namespace,
     params.project,
-    params.repo,
+    params.repository,
   ],
   responses: {
     '200': {
@@ -97,17 +97,17 @@ local listRepos = {
   },
 };
 
-local repo = {
+local repository = {
   get: getRepo,
   put: putRepo,
   delete: deleteRepo,
 };
 
-local repos = {
+local repositories = {
   get: listRepos,
 };
 
 {
-  '/namespaces/{namespace}/project/{project}/repos': repos,
-  '/namespaces/{namespace}/project/{project}/repos/{repo}': repo,
+  '/namespaces/{namespace}/projects/{project}/repositories': repositories,
+  '/namespaces/{namespace}/projects/{project}/repositories/{repository}': repository,
 }

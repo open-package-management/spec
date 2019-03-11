@@ -29,8 +29,8 @@ local project = {
   schema: type.string,
 };
 
-local repo = {
-  name: 'repo',
+local repository = {
+  name: 'repository',
   'in': 'path',
   required: true,
   schema: type.string,
@@ -38,6 +38,13 @@ local repo = {
 
 local package = {
   name: 'package',
+  'in': 'path',
+  required: true,
+  schema: type.string,
+};
+
+local tag = {
+  name: 'tag',
   'in': 'path',
   required: true,
   schema: type.string,
@@ -58,7 +65,8 @@ local perPage = {
 {
   namespace:: namespace,
   project:: project,
-  repo:: repo,
+  repository:: repository,
+  tag:: tag,
   package:: package,
   label:: label,
   perPage:: perPage,
