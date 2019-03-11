@@ -1,7 +1,6 @@
 package schema
 
 import (
-	//	"fmt"
 	"io/ioutil"
 	"os"
 	"testing"
@@ -22,7 +21,7 @@ var namespaceTestTable = []testParams{
 }
 
 var projectTestTable = []testParams{
-	//	{"project/project.example.json", true, project},
+	{"project/project.single.example.json", MediaTypeProject, true},
 	//	{"project/project.create.example.json", true, projectCreate},
 	//	{"project/project.list.example.json", true, projectList},
 }

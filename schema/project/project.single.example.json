@@ -1,9 +1,16 @@
 {
    "labels": {
-      "costCenter": "cs-foo",
-      "manager": "Frank Ponnez",
-      "team": "team-example"
+      "consumer": {
+         "costCenter": "cs-foo",
+         "manager": "Tom Ripen",
+         "team": "team-foo"
+      },
+      "provider": {
+         "awsAccount": "aws-account-foo",
+         "pricingPlan": "PREMIUM",
+         "region": "us-east-1"
+      }
    },
-   "name": "project-example",
-   "repositories": 34
+   "name": "project-foo",
+   "namespace": "namespace-foo"
 }

@@ -31,17 +31,24 @@ local projectSchemaFunc(output=jsonschema) = {
   properties: {
     name: { type: 'string' },
     namespace: { type: 'string' },
-    labels: types.mapStringString(output),
+    labels: types.labels(output),
   },
 };
 
 local projectExample = {
-  name: 'project-example',
-  repositories: 34,
+  name: 'project-foo',
+  namespace: 'namespace-foo',
   labels: {
-    team: 'team-example',
-    manager: 'Frank Ponnez',
-    costCenter: 'cs-foo',
+    provider: {
+      awsAccount: 'aws-account-foo',
+      pricingPlan: 'PREMIUM',
+      region: 'us-east-1',
+    },
+    consumer: {
+      team: 'team-foo',
+      manager: 'Tom Ripen',
+      costCenter: 'cs-foo',
+    },
   },
 };
 

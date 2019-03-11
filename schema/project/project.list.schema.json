@@ -6,6 +6,15 @@
          "items": {
             "properties": {
                "labels": {
+                  "additionalProperties": false,
+                  "properties": {
+                     "consumer": {
+                        "type": "object"
+                     },
+                     "provider": {
+                        "type": "object"
+                     }
+                  },
                   "type": "object"
                },
                "name": {

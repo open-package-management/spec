@@ -286,26 +286,28 @@ MUoBAAA=
 	"/project/project.list.schema.json": {
 		name:    "project.list.schema.json",
 		local:   "project/project.list.schema.json",
-		size:    560,
+		size:    863,
 		modtime: 1546544639,
 		compressed: `
-H4sIAAAAAAAC/5yPz07DMAzG732KKHBcF25IeRsvM11Gm1i2LxPau6M0LVQtBbTr9+f32R+NMcY+x7P1
-xl5USbxzmTARhHfoUI4xOwkXHMAR5ysGbfsoag+1WK257J27Sk5tVY+ZO3dmeNP25XWCPE1F4kzIGlGs
-N+MRk1oWllqRo+Kw0nYZ33YPJ+x/tIqrN8Jydj6VRbuO3A8bXoIB/6KJckzdf2lCEB5GNr8M7H+3DH6l
-gBluc2gE19gGc28+AwAA//8Lb3QTMAIAAA==
+H4sIAAAAAAAC/6yQTU7DMBCF9zlFZFg2NTuknIIrTONp6uJ4rJkBqUK9O3KTQETjUiG27+d79nxUdV2b
+R+9MW5uDapLWWkoYE3Sv0KNsPVnpDjiATUxH7LQJXtRsxuJozeXW2qNQbEZ1S9xbx7DX5ul5gjxMxcSU
+kNWjmLa+PGJS88JSy7JXHH5oRca3HWCHYdXKLjjn1VOE8LLE7CEIbtYKt9emUEdR3gbkciSn9JQwn4x2
++bdmPXjeFDYS07t3/7NR3bn7G+66ZCIMWDr+TBNlH/t7aZKg+zOyujFQ/t0y+JUCZjjNoQt4jF1hztVn
+AAAA//+qqcajXwMAAA==
 `,
 	},
 
 	"/project/project.single.schema.json": {
 		name:    "project.single.schema.json",
 		local:   "project/project.single.schema.json",
-		size:    430,
+		size:    825,
 		modtime: 1546544639,
 		compressed: `
-H4sIAAAAAAAC/4yPO27FIBBFe1aBSErbJFUkVpEtjPHExrFhBNNEFnuP/Hkff4pXcuYe3cskpJTq3TXK
-SNUxUzJaB0JPYH+hxVS5oJPtcARNMfRoWRWrs9KbZ7TuU/DlSqsQW91E+OHy42vz3zaRYiCM7DApI5f+
-mQ5Q4/BMligwY/TfV8YWqabPIp/wfOE/wnld4uh8q3b3/HjlQpydUC8/FYeI8jDiYeN1zV5JBPZFT9zl
-05gs/gMAAP//nWVdOq4BAAA=
+H4sIAAAAAAAC/9ySwW6DMAyG73mKKNuRku00iafoK7iJS9NBHMXepKni3acAq1gL0869fv//BdviorTW
+5jl402hzEkncWEsJYwL3Di1yHciyO2EPNmU6oxNTTc5Ef7zG2jNT3E20ptxan+Eou5e32X+axZQpYZaA
+bBo9fr/QDg7YLUmB4H2QQBG6/VI6QsdYLXqrT86Zo8gfPea7ZBRBBHPcb/tzsb68VsNGWHL5SlhOwZJD
+bM1Ka7hlQ6W2XqHDeGj1R73s/Bn8A+ylVs0N51oxEXq8+V3Wh/2tcAL3T09d5bthBvUdAAD//xc2Gm05
+AwAA
 `,
 	},
 
