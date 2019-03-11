@@ -100,9 +100,6 @@ local repositoryListSchemaFunc(output=jsonschema) = {
   additionalProperties: false,
   properties: {
     repositories: {
-      name: { type: 'string' },
-      namespace: { type: 'string' },
-      project: { type: 'string' },
       type: 'array',
       items: repositorySchemaFunc(''),
     },

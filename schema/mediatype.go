@@ -27,4 +27,6 @@ const (
 	MediaTypeRepositoryCreate MediaType = "application/vnd.opm.repository.create.v1+json"
 	MediaTypeRepositoryList   MediaType = "application/vnd.opm.repository.list.v1+json"
 	MediaTypeTag              MediaType = "application/vnd.opm.tag.v1+json"
+	MediaTypeTagCreate        MediaType = "application/vnd.opm.tag.create.v1+json"
+	MediaTypeTagList          MediaType = "application/vnd.opm.tag.list.v1+json"
 )

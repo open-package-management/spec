@@ -39,6 +39,12 @@ local repositoryFiles = {
 local tagFiles = {
   'tag/tag.single.schema.json': t.tag.schema('jsonschema'),
   'tag/tag.single.example.json': t.tag.example,
+
+  'tag/tag.create.schema.json': t.tagCreate.schema('jsonschema'),
+  'tag/tag.create.example.json': t.tagCreate.example,
+
+  'tag/tag.list.schema.json': t.tagList.schema('jsonschema'),
+  'tag/tag.list.example.json': t.tagList.example,
 };
 
 local allFiles = namespaceFiles + projectFiles + repositoryFiles + tagFiles;

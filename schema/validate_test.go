@@ -34,6 +34,8 @@ var repositoryTestTable = []testParams{
 
 var tagTestTable = []testParams{
 	{"tag/tag.single.example.json", MediaTypeTag, true},
+	{"tag/tag.create.example.json", MediaTypeTagCreate, true},
+	{"tag/tag.list.example.json", MediaTypeTagList, true},
 }
 
 func TestSchemas(t *testing.T) {
