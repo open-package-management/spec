@@ -32,11 +32,16 @@ var repositoryTestTable = []testParams{
 	{"repository/repository.list.example.json", MediaTypeRepositoryList, true},
 }
 
+var tagTestTable = []testParams{
+	{"tag/tag.single.example.json", MediaTypeTag, true},
+}
+
 func TestSchemas(t *testing.T) {
 	schemaTables := [][]testParams{
 		namespaceTestTable,
 		projectTestTable,
 		repositoryTestTable,
+		tagTestTable,
 	}
 
 	for _, tt := range schemaTables {

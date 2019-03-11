@@ -37,6 +37,7 @@ local repositoryFiles = {
 };
 
 local tagFiles = {
+  'tag/tag.single.schema.json': t.tag.schema('jsonschema'),
   'tag/tag.single.example.json': t.tag.example,
 };
 

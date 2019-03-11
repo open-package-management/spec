@@ -20,6 +20,8 @@ func Validator() map[MediaType]*gojsonschema.Schema {
 		MediaTypeRepository:       repositoryValidator(),
 		MediaTypeRepositoryCreate: repositoryCreateValidator(),
 		MediaTypeRepositoryList:   repositoryListValidator(),
+
+		MediaTypeTag: tagValidator(),
 	}
 	return vmap
 
@@ -91,6 +93,12 @@ func repositoryCreateValidator() *gojsonschema.Schema {
 
 func repositoryListValidator() *gojsonschema.Schema {
 	path := "repository/repository.list.schema.json"
+	mediaType := string(MediaTypeRepositoryList)
+	return load(path, mediaType)
+}
+
+func tagValidator() *gojsonschema.Schema {
+	path := "tag/tag.single.schema.json"
 	mediaType := string(MediaTypeRepositoryList)
 	return load(path, mediaType)
 }

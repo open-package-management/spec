@@ -355,6 +355,23 @@ AAA=
 `,
 	},
 
+	"/tag/tag.single.schema.json": {
+		name:    "tag.single.schema.json",
+		local:   "tag/tag.single.schema.json",
+		size:    1701,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/7yUzY7aMBSF9zxF6kFVWzBJaAiDpapi02276GpQBt0SJ3iKf2obqQzKu1eZBEian2Fa
+aXbO0TnXn69vfBw4joOGLEbEQVtrlSGuKxUVCjY/IaVmwqRrNlvKwbWQonHhL5RThrjug5ECF+pE6tSN
+NSQWe/Mye1MGIY6ZZVLA7puWimrLqEHESWBnaOFQVf2JLlc5CJZQYyvaVeVOPnH4miDirC6a41Qrlb7W
+zWuOmKUNjHoJsJZqkbfm3mxhOgvJaom/AE48vIiOYZANUUs0G/QK2fjVyWf+tEbuT2//Df3yFVXvpIe4
+h7VGuQL8mLON3n0mq9FkjaOz8v4DyddLfOfhxac1jkZDNG4UswdF80rGaiZS1NdyxGnM4HsReAZrie9K
+jsvyzc3wLb5fT0bR0Rv70zBzr7P9L7Zhj+3EHH4zvueIOP5tEITzIPDmH+feYjbzQz9sbsqZKP1eNxET
+lqZU9yPt9a51ShGzlHfObyI1h3wm0F6zZlOe60uTo5oAreGAuua2GkSa/tozTePGc1K0unNqxq0j3vFz
+nLjkjwe6ObvOHEgA/+tWOw5fjxgFm5fmlJZPDC9LaaqkYVbqw3XBwTndOHs2+BMAAP//pEOqXaUGAAA=
+`,
+	},
+
 	"/": {
 		name:  "/",
 		local: `.`,
@@ -408,5 +425,7 @@ var _escDirs = map[string][]os.FileInfo{
 		_escData["/repository/repository.single.schema.json"],
 	},
 
-	"tag": {},
+	"tag": {
+		_escData["/tag/tag.single.schema.json"],
+	},
 }

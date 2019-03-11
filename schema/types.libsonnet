@@ -14,7 +14,9 @@
 
 local openapi = 'openapi';
 local jsonschema = 'jsonschema';
-local V7 = 'http://json-schema.org/draft-07/schema#';
+local jsonschemaV7 = 'http://json-schema.org/draft-07/schema#';
+
+local string = { type: 'string' };
 
 local uint64 = {
   type: 'integer',
@@ -59,4 +61,7 @@ local labels(output=jsonschema) = {
   uint64:: uint64,
   mapStringString:: mapStringString,
   labels:: labels,
+  string:: string,
+  jsonschema:: jsonschema,
+  jsonschemaV7:: jsonschemaV7,
 }
